@@ -30,20 +30,6 @@ const SVGDefs = () => {
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
-
-      <clipPath id="revealClip">
-        <rect x="0" y="0" width="400" height="500">
-          <animate
-            attributeName="y"
-            values="500;0"
-            dur="3s"
-            fill="freeze"
-            begin="0s"
-            calcMode="spline"
-            keySplines="0.4 0 0.2 1"
-          />
-        </rect>
-      </clipPath>
     </defs>
   );
 };

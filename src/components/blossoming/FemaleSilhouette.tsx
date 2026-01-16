@@ -6,138 +6,138 @@ const FemaleSilhouette = ({ isVisible }: FemaleSilhouetteProps) => {
   if (!isVisible) return null;
 
   return (
-    <g 
-      filter="url(#silhouetteGlow)"
-      clipPath="url(#revealClip)"
-    >
-      <ellipse
-        cx="200"
-        cy="250"
-        rx="100"
-        ry="180"
-        fill="url(#silhouetteGradient)"
-        opacity="0"
-      >
-        <animate attributeName="opacity" values="0;0;0.3;0.5;0.3" dur="7s" begin="3s" repeatCount="indefinite" />
-      </ellipse>
+    <g filter="url(#silhouetteGlow)">
+      <g opacity="0">
+        <animate 
+          attributeName="opacity" 
+          values="0;0;1;1;0;0" 
+          dur="12s" 
+          begin="0s" 
+          repeatCount="indefinite" 
+        />
 
-      <g>
         <animateTransform
           attributeName="transform"
           type="scale"
-          values="0.98;1.02;0.98"
-          dur="2s"
-          begin="0s"
+          values="0.95;1;0.95"
+          dur="6s"
+          begin="2s"
           repeatCount="indefinite"
           additive="sum"
         />
-        <animateTransform
-          attributeName="transform"
-          type="translate"
-          values="0,0; 0,-1; 0,-2; 0,-1; 0,0"
-          dur="3s"
-          begin="4s"
-          repeatCount="indefinite"
-          additive="sum"
+
+        <path
+          d="M 200 50 
+             Q 185 48 175 55 Q 170 65 172 80 Q 174 90 180 95
+             L 180 105 Q 178 115 180 125
+             Q 182 140 185 150
+             L 185 160
+             Q 180 165 175 175 Q 170 190 168 210
+             L 168 240 Q 168 255 170 265
+             Q 172 280 178 295
+             L 178 320 Q 176 335 175 350
+             L 175 380 Q 175 400 177 415
+             L 177 450 Q 178 465 182 475
+             Q 185 480 190 482
+             L 192 485
+             
+             L 200 485
+             
+             L 208 485
+             Q 215 480 218 475 Q 222 465 223 450
+             L 223 415 Q 225 400 225 380
+             L 225 350 Q 224 335 222 320
+             L 222 295 Q 228 280 230 265 Q 232 255 232 240
+             L 232 210 Q 230 190 225 175 Q 220 165 215 160
+             L 215 150 Q 218 140 220 125 Q 222 115 220 105
+             L 220 95 Q 226 90 228 80 Q 230 65 225 55 Q 215 48 200 50 Z"
+          fill="url(#silhouetteGradient)"
         />
 
         <ellipse
           cx="200"
-          cy="120"
-          rx="35"
-          ry="42"
+          cy="70"
+          rx="22"
+          ry="28"
           fill="url(#silhouetteGradient)"
         />
 
         <path
-          d="M 165 95 Q 155 75 160 60 Q 175 45 200 50 Q 225 45 240 60 Q 245 75 235 95 L 200 100 Z"
+          d="M 178 60 Q 165 58 158 52 Q 150 45 148 35 Q 148 25 155 20 Q 165 18 172 25 Q 175 35 176 45 Z"
           fill="url(#silhouetteGradient)"
         />
 
         <path
-          d="M 155 100 Q 145 85 140 70 Q 135 55 145 45 L 155 55 Q 150 70 155 85 Z"
-          fill="url(#silhouetteGradient)"
-          opacity="0.9"
-        />
-
-        <path
-          d="M 245 100 Q 255 85 260 70 Q 265 55 255 45 L 245 55 Q 250 70 245 85 Z"
-          fill="url(#silhouetteGradient)"
-          opacity="0.9"
-        />
-
-        <path
-          d="M 180 145 Q 185 135 200 135 Q 215 135 220 145"
+          d="M 222 60 Q 235 58 242 52 Q 250 45 252 35 Q 252 25 245 20 Q 235 18 228 25 Q 225 35 224 45 Z"
           fill="url(#silhouetteGradient)"
         />
 
         <path
-          d="M 185 165 Q 190 175 200 175 Q 210 175 215 165 L 215 205 Q 210 215 200 220 Q 190 215 185 205 Z"
+          d="M 155 30 Q 145 35 138 32 Q 130 28 128 20 Q 130 12 140 15 Q 148 20 152 25 Z"
           fill="url(#silhouetteGradient)"
+          opacity="0.8"
         />
 
         <path
-          d="M 185 205 Q 175 210 165 225 Q 155 245 155 270 L 155 305 Q 158 320 165 330 L 185 330 Z"
+          d="M 245 30 Q 255 35 262 32 Q 270 28 272 20 Q 270 12 260 15 Q 252 20 248 25 Z"
           fill="url(#silhouetteGradient)"
+          opacity="0.8"
         />
 
         <path
-          d="M 215 205 Q 225 210 235 225 Q 245 245 245 270 L 245 305 Q 242 320 235 330 L 215 330 Z"
-          fill="url(#silhouetteGradient)"
-        />
-
-        <path
-          d="M 165 330 Q 155 345 155 365 Q 155 380 160 395 L 165 445 Q 165 455 170 465 Q 175 475 185 477 L 190 450 L 185 380 Z"
-          fill="url(#silhouetteGradient)"
-        />
-
-        <path
-          d="M 235 330 Q 245 345 245 365 Q 245 380 240 395 L 235 445 Q 235 455 230 465 Q 225 475 215 477 L 210 450 L 215 380 Z"
-          fill="url(#silhouetteGradient)"
-        />
-
-        <path
-          d="M 185 220 Q 160 230 145 245 Q 130 260 125 275 L 120 285 Q 118 290 120 295 L 130 300 Q 140 290 150 280 Z"
+          d="M 185 165 Q 165 175 150 190 Q 135 205 130 222 Q 128 235 132 245 L 138 250 Q 145 245 155 235 Q 165 220 172 210 Z"
           fill="url(#silhouetteGradient)"
         >
           <animateTransform
             attributeName="transform"
             type="rotate"
-            values="0 185 220;0 185 220;-20 185 220"
-            dur="2s"
-            begin="1.5s"
-            fill="freeze"
+            values="-5 185 165;-25 185 165;-5 185 165"
+            dur="4s"
+            begin="3s"
+            repeatCount="indefinite"
           />
         </path>
 
         <path
-          d="M 215 220 Q 240 230 255 245 Q 270 260 275 275 L 280 285 Q 282 290 280 295 L 270 300 Q 260 290 250 280 Z"
+          d="M 215 165 Q 235 175 250 190 Q 265 205 270 222 Q 272 235 268 245 L 262 250 Q 255 245 245 235 Q 235 220 228 210 Z"
           fill="url(#silhouetteGradient)"
         >
           <animateTransform
             attributeName="transform"
             type="rotate"
-            values="0 215 220;0 215 220;20 215 220"
-            dur="2s"
-            begin="1.5s"
-            fill="freeze"
+            values="5 215 165;25 215 165;5 215 165"
+            dur="4s"
+            begin="3s"
+            repeatCount="indefinite"
           />
         </path>
 
         <ellipse
-          cx="180"
-          cy="477"
-          rx="20"
-          ry="8"
+          cx="188"
+          cy="485"
+          rx="14"
+          ry="6"
           fill="url(#silhouetteGradient)"
         />
 
         <ellipse
-          cx="220"
-          cy="477"
-          rx="20"
-          ry="8"
+          cx="212"
+          cy="485"
+          rx="14"
+          ry="6"
           fill="url(#silhouetteGradient)"
+        />
+
+        <path
+          d="M 200 265 Q 185 268 175 275 Q 170 282 172 290 Q 175 298 185 300 Q 195 300 200 295 Z"
+          fill="url(#silhouetteGradient)"
+          opacity="0.6"
+        />
+
+        <path
+          d="M 200 265 Q 215 268 225 275 Q 230 282 228 290 Q 225 298 215 300 Q 205 300 200 295 Z"
+          fill="url(#silhouetteGradient)"
+          opacity="0.6"
         />
       </g>
     </g>
