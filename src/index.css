@@ -1077,4 +1077,28 @@
       background-position: 100% 50%;
     }
   }
+
+  @media (max-width: 768px) {
+    .pricing-card:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+
+    .timeline-card:hover {
+      transform: translateX(4px);
+    }
+
+    .modern-icon-card:hover .modern-animated-icon {
+      transform: scale(1.1);
+    }
+
+    .problem-card:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    body {
+      font-size: 16px;
+    }
+  }
 }

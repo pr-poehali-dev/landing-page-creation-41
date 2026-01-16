@@ -47,43 +47,43 @@ const Index = () => {
         <AnimatedBackground variant="default" />
       </div>
       
-      <section className="py-20 px-4 md:py-32 relative">
+      <section className="py-16 md:py-24 lg:py-32 px-4 relative">
         <AnimatedBackground variant="light" className="opacity-40" />
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="hero" className="w-32 h-32 md:w-40 md:h-40" />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 leading-tight">
             Верни себе право на удовольствие и близость
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto">
             Закрытая терапевтическая группа и курс по женской сексуальности. Без стыда. Без давления.
           </p>
           
-          <div className="flex flex-wrap gap-4 justify-center mb-8 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Calendar" size={18} className="text-primary icon-hover" />
+          <div className="flex flex-wrap gap-2 md:gap-4 justify-center mb-8 text-sm md:text-base">
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Calendar" size={20} className="text-primary icon-hover" />
               <span>12 недель работы с телом и психикой</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Users" size={18} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Users" size={20} className="text-primary icon-hover" />
               <span>Группа 6-8 женщин</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Heart" size={18} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Heart" size={20} className="text-primary icon-hover" />
               <span>Сексолог и психотерапевт</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Monitor" size={18} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Monitor" size={20} className="text-primary icon-hover" />
               <span>Онлайн + материалы</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" onClick={scrollToForm} className="text-lg px-8 py-6 bg-primary hero-button-primary">
+            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-primary hero-button-primary">
               Записаться в группу
             </Button>
-            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-lg px-8 py-6 border-2 border-primary text-primary hero-button-secondary">
+            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 border-2 border-primary text-primary hero-button-secondary">
               Получить программу
             </Button>
           </div>
@@ -103,7 +103,7 @@ const Index = () => {
             Если ты это читаешь, возможно, тебе больно уже слишком долго
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-12">
             {[
               { iconName: "Zap", title: "Боль вместо удовольствия", text: "Секс = страх, боль или онемение" },
               { iconName: "UserX", title: "Отключенность от тела", text: "Тело выключается в близости" },
@@ -112,9 +112,9 @@ const Index = () => {
               { iconName: "MessageSquareOff", title: "Молчание", text: "Не знаешь, с кем разделить боль" },
               { iconName: "Ban", title: "Избегание близости", text: "Или согласие через силу" }
             ].map((item, idx) => (
-              <Card key={idx} className="p-6 border-2 hover:border-secondary/50 transition-all problem-card">
+              <Card key={idx} className="p-4 md:p-6 border-2 hover:border-secondary/50 transition-all problem-card">
                 <div className="mb-4 flex justify-center">
-                  <Icon name={item.iconName} size={48} className="text-[#8a2be2] problem-icon" />
+                  <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#8a2be2] problem-icon" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-muted-foreground">{item.text}</p>
@@ -123,14 +123,14 @@ const Index = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-lg md:text-xl text-primary font-medium bg-secondary/10 p-6 rounded-lg inline-block">
+            <p className="text-lg md:text-xl text-primary font-medium bg-secondary/10 p-4 md:p-6 rounded-lg inline-block">
               Ты не сломана. Это естественная реакция на травму. С этим можно работать.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 relative">
+      <section className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="light" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
@@ -140,7 +140,7 @@ const Index = () => {
             Как может выглядеть твоя жизнь через 12 недель
           </h2>
           
-          <div ref={promiseCards.elementRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div ref={promiseCards.elementRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {[
               { iconName: "Shield", title: "Уверенность в границах", text: "Говоришь да/нет, не предавая себя" },
               { iconName: "Sparkles", title: "Восстановление чувствительности", text: "Тело откликается на нежность" },
@@ -148,19 +148,19 @@ const Index = () => {
               { iconName: "Star", title: "Свобода от стыда", text: "Не стыдишься чувств и желаний" },
               { iconName: "ShieldCheck", title: "Инструменты для себя", text: "Знаешь, как поддерживать себя" }
             ].map((item, idx) => (
-              <Card key={idx} className={`p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+              <Card key={idx} className={`p-4 md:p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="mb-4 flex justify-center">
-                  <Icon name={item.iconName} size={48} className="text-[#8a2be2] modern-animated-icon" />
+                  <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#8a2be2] modern-animated-icon" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
-                <p className="text-muted-foreground">{item.text}</p>
+                <h3 className="text-lg md:text-xl font-semibold mb-2 text-primary">{item.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground">{item.text}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="format" className="w-28 h-28 md:w-32 md:h-32" />
@@ -172,16 +172,16 @@ const Index = () => {
             Три мощных инструмента для восстановления
           </p>
           
-          <div ref={formatCards.elementRef} className="grid md:grid-cols-3 gap-8">
+          <div ref={formatCards.elementRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
               { iconName: "BookOpen", title: "Обучающий курс", features: ["12 модулей видео/аудио", "Психоэдукация", "Домашние задания", "Материалы навсегда"] },
               { iconName: "Users", title: "Закрытая группа", features: ["1 встреча/неделю 2ч", "6-8 участниц", "Онлайн + очно Владивосток", "Обсуждение и поддержка"] },
               { iconName: "MessageCircleHeart", title: "Поддержка 24/7", features: ["Telegram-чат", "Ответы на вопросы", "Напоминания", "Доступ после курса"] }
             ].map((card, idx) => (
-              <Card key={idx} className={`p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
-                <div className="mb-6 flex justify-center">
-                  <div className="bg-[#8a2be2]/10 p-4 rounded-full">
-                    <Icon name={card.iconName} size={56} className="text-[#8a2be2] modern-format-icon" />
+              <Card key={idx} className={`p-6 md:p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+                <div className="mb-4 md:mb-6 flex justify-center">
+                  <div className="bg-[#8a2be2]/10 p-3 md:p-4 rounded-full">
+                    <Icon name={card.iconName} className="w-12 h-12 md:w-14 md:h-14 text-[#8a2be2] modern-format-icon" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-6 text-center text-primary">{card.title}</h3>
@@ -199,7 +199,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 relative">
+      <section className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="accent" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
@@ -209,24 +209,24 @@ const Index = () => {
             Твой путь: <AnimatedCounter end={12} suffix=" недель" className="text-[#8a2be2]" /> шаг за шагом
           </h2>
           
-          <div className="flex justify-center gap-8 md:gap-16 mb-16 flex-wrap">
+          <div className="flex justify-center gap-6 md:gap-8 lg:gap-16 mb-12 md:mb-16 flex-wrap">
             <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
                 <AnimatedCounter end={12} />
               </div>
-              <p className="text-muted-foreground">встреч в группе</p>
+              <p className="text-sm md:text-base text-muted-foreground">встреч в группе</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
                 <AnimatedCounter end={6} suffix="-8" />
               </div>
-              <p className="text-muted-foreground">участниц</p>
+              <p className="text-sm md:text-base text-muted-foreground">участниц</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
                 <AnimatedCounter end={24} />
               </div>
-              <p className="text-muted-foreground">часа работы</p>
+              <p className="text-sm md:text-base text-muted-foreground">часа работы</p>
             </div>
           </div>
           
@@ -263,19 +263,19 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-8 md:mb-12">
             Для кого программа
           </h2>
           
-          <div ref={targetCards.elementRef} className="grid md:grid-cols-2 gap-8">
-            <Card className={`p-8 border-2 border-accent/30 bg-accent/5 fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-1`}>
-              <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                <Icon name="Check" size={28} className="text-accent" />
+          <div ref={targetCards.elementRef} className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <Card className={`p-6 md:p-8 border-2 border-accent/30 bg-accent/5 fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-1`}>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary flex items-center gap-2">
+                <Icon name="Check" size={24} className="text-accent" />
                 Подходит
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {[
                   "Пережила насилие/манипуляции",
                   "Близость даётся тяжело",
@@ -285,18 +285,18 @@ const Index = () => {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Icon name="Heart" size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                    <span>{item}</span>
+                    <span className="text-sm md:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
             </Card>
 
-            <Card className={`p-8 border-2 border-muted fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-2`}>
-              <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
-                <Icon name="X" size={28} className="text-muted-foreground" />
+            <Card className={`p-6 md:p-8 border-2 border-muted fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-2`}>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary flex items-center gap-2">
+                <Icon name="X" size={24} className="text-muted-foreground" />
                 Не подходит
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 md:space-y-3">
                 {[
                   "Ожидаешь волшебную таблетку",
                   "Не готова к конфиденциальности",
@@ -306,7 +306,7 @@ const Index = () => {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <Icon name="Minus" size={20} className="text-muted-foreground mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
+                    <span className="text-sm md:text-base text-muted-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -315,22 +315,22 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 relative">
+      <section className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="light" className="opacity-60" />
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-accent/20 shadow-xl">
-            <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="bg-white rounded-2xl p-6 md:p-8 lg:p-12 border-2 border-accent/20 shadow-xl">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
               <div className="flex-shrink-0">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-5xl font-bold">
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-4xl md:text-5xl font-bold">
                   АВ
                 </div>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-primary mb-2">Анна Ветрюк</h2>
-                <p className="text-xl text-secondary font-medium mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">Анна Ветрюк</h2>
+                <p className="text-lg md:text-xl text-secondary font-medium mb-4">
                   Психолог, психотерапевт, секс-терапевт
                 </p>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-sm md:text-base text-muted-foreground mb-4">
                   5+ лет работы с женской сексуальностью и травмой. Десятки женщин прошли путь от 'я сломана' к опоре на себя.
                 </p>
                 <div className="space-y-2 text-sm">
@@ -343,13 +343,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-8 md:mb-16">
             Форматы и стоимость
           </h2>
           
-          <div ref={pricingCards.elementRef} className="grid md:grid-cols-3 gap-8">
+          <div ref={pricingCards.elementRef} className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
               { name: "Лайт", icon: "📚", price: "7 900₽", featured: false, features: ["Все модули курса", "Домашние задания", "Без группы", "Без чата"] },
               { name: "Группа+курс", icon: "👥", price: "15 900₽", installment: "5 300₽×3", featured: true, features: ["12 встреч по 2ч", "Все материалы", "Чат поддержки", "Сообщения между встречами"] },
@@ -357,24 +357,24 @@ const Index = () => {
             ].map((plan, idx) => (
               <Card 
                 key={idx} 
-                className={`p-8 pricing-card ${plan.featured ? 'border-4 border-accent shadow-2xl scale-105 bg-gradient-to-b from-white to-accent/5 pricing-card-featured' : 'border-2'} transition-all hover:shadow-xl fade-in-up ${pricingCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}
+                className={`p-6 md:p-8 pricing-card ${plan.featured ? 'border-4 border-accent shadow-2xl md:scale-105 bg-gradient-to-b from-white to-accent/5 pricing-card-featured' : 'border-2'} transition-all hover:shadow-xl fade-in-up ${pricingCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}
               >
                 {plan.featured && (
                   <div className="bg-accent text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
                     Популярный
                   </div>
                 )}
-                <div className="text-5xl mb-4 text-center">{plan.icon}</div>
-                <h3 className="text-2xl font-bold text-center mb-2 text-primary">{plan.name}</h3>
-                <p className="text-4xl font-bold text-center mb-2 text-accent">{plan.price}</p>
+                <div className="text-4xl md:text-5xl mb-4 text-center">{plan.icon}</div>
+                <h3 className="text-xl md:text-2xl font-bold text-center mb-2 text-primary">{plan.name}</h3>
+                <p className="text-3xl md:text-4xl font-bold text-center mb-2 text-accent">{plan.price}</p>
                 {plan.installment && (
-                  <p className="text-center text-sm text-muted-foreground mb-6">или {plan.installment}</p>
+                  <p className="text-center text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">или {plan.installment}</p>
                 )}
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
                       <Icon name="Check" size={20} className="text-accent mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
+                      <span className="text-sm md:text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -391,10 +391,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 relative">
+      <section className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="default" className="opacity-50" />
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-8 md:mb-12">
             Частые вопросы
           </h2>
           
@@ -407,11 +407,11 @@ const Index = () => {
               { q: "Конфиденциально?", a: "100%. Соглашение, псевдонимы возможны." },
               { q: "Станет тяжело?", a: "Упражнения на регуляцию. Можешь взять паузу." }
             ].map((item, idx) => (
-              <AccordionItem key={idx} value={`item-${idx}`} className="bg-white border-2 rounded-lg px-6">
-                <AccordionTrigger className="text-lg font-semibold text-primary hover:no-underline">
+              <AccordionItem key={idx} value={`item-${idx}`} className="bg-white border-2 rounded-lg px-4 md:px-6">
+                <AccordionTrigger className="text-base md:text-lg font-semibold text-primary hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+                <AccordionContent className="text-sm md:text-base text-muted-foreground">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -420,7 +420,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section ref={formRef} className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section ref={formRef} className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-6">
             Если время настало — я буду рядом
@@ -429,8 +429,8 @@ const Index = () => {
             Оставь заявку, обсудим формат
           </p>
           
-          <Card className={`p-8 border-2 border-accent/30 bg-gradient-to-br from-white to-secondary/5 form-highlight ${formHighlight ? 'active' : ''}`}>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <Card className={`p-6 md:p-8 border-2 border-accent/30 bg-gradient-to-br from-white to-secondary/5 form-highlight ${formHighlight ? 'active' : ''}`}>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2 text-primary">Имя *</label>
                 <Input 
@@ -438,18 +438,18 @@ const Index = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="Как к тебе обращаться?"
-                  className="border-2"
+                  className="border-2 h-12 md:h-14"
                 />
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                   <label className="block text-sm font-medium mb-2 text-primary">Возраст</label>
                   <Input 
                     value={formData.age}
                     onChange={(e) => setFormData({...formData, age: e.target.value})}
                     placeholder="Необязательно"
-                    className="border-2"
+                    className="border-2 h-12 md:h-14"
                   />
                 </div>
                 <div>
@@ -458,7 +458,7 @@ const Index = () => {
                     value={formData.city}
                     onChange={(e) => setFormData({...formData, city: e.target.value})}
                     placeholder="Необязательно"
-                    className="border-2"
+                    className="border-2 h-12 md:h-14"
                   />
                 </div>
               </div>
@@ -469,7 +469,7 @@ const Index = () => {
                   value={formData.request}
                   onChange={(e) => setFormData({...formData, request: e.target.value})}
                   placeholder="Что привело тебя сюда?"
-                  className="border-2 min-h-32"
+                  className="border-2 min-h-[100px] md:min-h-32"
                 />
               </div>
 
@@ -480,11 +480,11 @@ const Index = () => {
                   value={formData.contact}
                   onChange={(e) => setFormData({...formData, contact: e.target.value})}
                   placeholder="Telegram / WhatsApp / Email"
-                  className="border-2"
+                  className="border-2 h-12 md:h-14"
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full text-lg py-6 bg-accent hover:bg-accent/90">
+              <Button type="submit" size="lg" className="w-full text-base md:text-lg py-4 md:py-6 bg-accent hover:bg-accent/90">
                 Отправить заявку
               </Button>
 
@@ -496,7 +496,7 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-primary text-white py-12 px-4">
+      <footer className="bg-primary text-white py-8 md:py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-2">Анна Ветрюк</h3>
           <p className="text-primary-foreground/80 mb-4">
