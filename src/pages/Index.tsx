@@ -7,7 +7,7 @@ import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import HeroAnimation from "@/components/HeroAnimation";
+import BlossomingFigure from "@/components/BlossomingFigure";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useState, useRef } from "react";
 
@@ -52,7 +52,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="flex justify-center mb-8 md:mb-12">
-            <HeroAnimation className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96" />
+            <BlossomingFigure className="w-64 h-80 md:w-80 md:h-96 lg:w-96 lg:h-[500px]" />
           </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white/90 mb-4 md:mb-6 leading-tight hero-text-glow px-4">
             Верни себе право на удовольствие и близость
@@ -70,10 +70,7 @@ const Index = () => {
               <Icon name="Users" size={20} className="text-[#8a2be2] icon-hover" />
               <span>Группа 6-8 женщин</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
-              <Icon name="Heart" size={20} className="text-[#8a2be2] icon-hover" />
-              <span>Сексолог и психотерапевт</span>
-            </div>
+
             <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
               <Icon name="Monitor" size={20} className="text-[#8a2be2] icon-hover" />
               <span>Онлайн + материалы</span>
@@ -81,10 +78,12 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white text-[#8a2be2] hover:bg-white/90 shadow-lg hero-button-primary-light">
+            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white/95 text-[#8a2be2] shadow-lg hero-cta-button border-2 border-white/50">
+              <Icon name="UserPlus" size={20} className="mr-2" />
               Записаться в группу
             </Button>
-            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 border-2 border-white text-white hover:bg-white/10 shadow-lg hero-button-secondary-light">
+            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white/95 text-[#8a2be2] shadow-lg hero-cta-button border-2 border-white/50">
+              <Icon name="FileText" size={20} className="mr-2" />
               Получить программу
             </Button>
           </div>
