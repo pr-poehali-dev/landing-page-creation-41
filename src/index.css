@@ -111,3 +111,358 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@layer utilities {
+  .animated-icon-wrapper {
+    @apply inline-block;
+  }
+
+  .animated-icon {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .animated-icon:hover {
+    transform: scale(1.05);
+  }
+
+  .animated-icon.visible {
+    animation: iconFadeIn 0.6s ease-out;
+  }
+
+  @keyframes iconFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-icon .pulse-circle {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .hero-icon .embrace-path {
+    animation: breathe 3s ease-in-out infinite;
+  }
+
+  .hero-icon .eye {
+    animation: blink 4s ease-in-out infinite;
+  }
+
+  .hero-icon .smile {
+    animation: smile 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      r: 60;
+      opacity: 0.2;
+    }
+    50% {
+      r: 65;
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes blink {
+    0%,
+    90%,
+    100% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes smile {
+    0%,
+    100% {
+      d: path("M90 115 Q100 120 110 115");
+    }
+    50% {
+      d: path("M90 115 Q100 122 110 115");
+    }
+  }
+
+  .problem-icon .heart-left {
+    animation: heartHeal 2s ease-in-out infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .problem-icon .heart-right {
+    animation: heartHeal 2s ease-in-out infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .problem-icon .crack {
+    animation: crackFade 3s ease-in-out infinite;
+  }
+
+  .problem-icon .bandage {
+    animation: bandageAppear 3s ease-in-out infinite;
+  }
+
+  @keyframes heartHeal {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(2px);
+    }
+  }
+
+  @keyframes crackFade {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes bandageAppear {
+    0%,
+    30% {
+      opacity: 0;
+    }
+    50%,
+    100% {
+      opacity: 0.9;
+    }
+  }
+
+  .promise-icon .wing {
+    animation: wingFlap 2s ease-in-out infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .promise-icon .wing-left {
+    animation-delay: 0s;
+  }
+
+  .promise-icon .wing-right {
+    animation-delay: 0.1s;
+  }
+
+  .promise-icon .antenna {
+    animation: antennaBounce 1.5s ease-in-out infinite;
+    transform-origin: 100px 80px;
+  }
+
+  .promise-icon .antenna-2 {
+    animation-delay: 0.1s;
+  }
+
+  @keyframes wingFlap {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes antennaBounce {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  .format-icon .book-cover {
+    animation: bookOpen 3s ease-in-out infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .format-icon .book-page {
+    animation: pageFlip 3s ease-in-out infinite;
+    transform-origin: 100px 100px;
+  }
+
+  .format-icon .light-particle {
+    animation: particleFloat 3s ease-in-out infinite;
+  }
+
+  .format-icon .particle-1 {
+    animation-delay: 0s;
+  }
+
+  .format-icon .particle-2 {
+    animation-delay: 0.5s;
+  }
+
+  .format-icon .particle-3 {
+    animation-delay: 1s;
+  }
+
+  .format-icon .particle-4 {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes bookOpen {
+    0%,
+    100% {
+      transform: perspective(400px) rotateY(0deg);
+    }
+    50% {
+      transform: perspective(400px) rotateY(-10deg);
+    }
+  }
+
+  @keyframes pageFlip {
+    0%,
+    100% {
+      transform: perspective(400px) rotateY(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      transform: perspective(400px) rotateY(10deg);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes particleFloat {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-15px) scale(1.1);
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-30px) scale(0.8);
+      opacity: 0;
+    }
+  }
+
+  .timeline-icon .path-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: pathDraw 4s ease-in-out infinite;
+  }
+
+  .timeline-icon .milestone {
+    animation: milestoneGrow 4s ease-in-out infinite;
+  }
+
+  .timeline-icon .milestone-glow {
+    animation: glowPulse 4s ease-in-out infinite;
+  }
+
+  .timeline-icon .milestone-1 {
+    animation-delay: 0s;
+  }
+
+  .timeline-icon .milestone-glow-1 {
+    animation-delay: 0s;
+  }
+
+  .timeline-icon .milestone-2 {
+    animation-delay: 0.5s;
+  }
+
+  .timeline-icon .milestone-glow-2 {
+    animation-delay: 0.5s;
+  }
+
+  .timeline-icon .milestone-3 {
+    animation-delay: 1s;
+  }
+
+  .timeline-icon .milestone-glow-3 {
+    animation-delay: 1s;
+  }
+
+  .timeline-icon .milestone-4 {
+    animation-delay: 1.5s;
+  }
+
+  .timeline-icon .milestone-glow-4 {
+    animation-delay: 1.5s;
+  }
+
+  .timeline-icon .milestone-5 {
+    animation-delay: 2s;
+  }
+
+  .timeline-icon .milestone-glow-5 {
+    animation-delay: 2s;
+  }
+
+  @keyframes pathDraw {
+    0% {
+      stroke-dashoffset: 200;
+    }
+    50%,
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes milestoneGrow {
+    0%,
+    10% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    15% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    20%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes glowPulse {
+    0%,
+    10% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    15% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    25% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+}
