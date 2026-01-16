@@ -850,7 +850,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(212, 117, 78, 0.1),
+      rgba(138, 43, 226, 0.15),
       transparent
     );
     transition: left 0.6s ease;
@@ -858,5 +858,78 @@
 
   .modern-icon-card:hover::before {
     left: 100%;
+  }
+
+  .problem-icon {
+    animation: problemPulse 2.5s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(138, 43, 226, 0.4));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .problem-card:hover .problem-icon {
+    animation: problemShake 0.6s ease-in-out;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.7));
+    transform: scale(1.15);
+  }
+
+  @keyframes problemPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes problemShake {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: scale(1.1) rotate(-3deg);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: scale(1.1) rotate(3deg);
+    }
+  }
+
+  .problem-card {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .problem-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(138, 43, 226, 0.05) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .problem-card:hover::after {
+    opacity: 1;
+  }
+
+  .problem-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(138, 43, 226, 0.4) !important;
+    box-shadow: 0 12px 30px rgba(138, 43, 226, 0.25);
   }
 }

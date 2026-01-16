@@ -104,15 +104,17 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {[
-              { icon: "⚡", title: "Боль вместо удовольствия", text: "Секс = страх, боль или онемение" },
-              { icon: "😔", title: "Отключенность от тела", text: "Тело выключается в близости" },
-              { icon: "🚫", title: "Не можешь расслабиться", text: "Даже с тем, кому доверяешь" },
-              { icon: "💔", title: "Стыд и вина", text: "Не отпускают, хотя не виновата" },
-              { icon: "🤐", title: "Молчание", text: "Не знаешь, с кем разделить боль" },
-              { icon: "⚠️", title: "Избегание близости", text: "Или согласие через силу" }
+              { iconName: "Zap", title: "Боль вместо удовольствия", text: "Секс = страх, боль или онемение" },
+              { iconName: "UserX", title: "Отключенность от тела", text: "Тело выключается в близости" },
+              { iconName: "ShieldAlert", title: "Не можешь расслабиться", text: "Даже с тем, кому доверяешь" },
+              { iconName: "HeartCrack", title: "Стыд и вина", text: "Не отпускают, хотя не виновата" },
+              { iconName: "MessageSquareOff", title: "Молчание", text: "Не знаешь, с кем разделить боль" },
+              { iconName: "Ban", title: "Избегание близости", text: "Или согласие через силу" }
             ].map((item, idx) => (
-              <Card key={idx} className="p-6 border-2 hover:border-secondary/50 transition-all">
-                <div className="text-4xl mb-4">{item.icon}</div>
+              <Card key={idx} className="p-6 border-2 hover:border-secondary/50 transition-all problem-card">
+                <div className="mb-4 flex justify-center">
+                  <Icon name={item.iconName} size={48} className="text-[#8a2be2] problem-icon" />
+                </div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-muted-foreground">{item.text}</p>
               </Card>
@@ -147,7 +149,7 @@ const Index = () => {
             ].map((item, idx) => (
               <Card key={idx} className={`p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="mb-4 flex justify-center">
-                  <Icon name={item.iconName} size={48} className="text-accent modern-animated-icon" />
+                  <Icon name={item.iconName} size={48} className="text-[#8a2be2] modern-animated-icon" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-muted-foreground">{item.text}</p>
@@ -177,8 +179,8 @@ const Index = () => {
             ].map((card, idx) => (
               <Card key={idx} className={`p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="mb-6 flex justify-center">
-                  <div className="bg-accent/10 p-4 rounded-full">
-                    <Icon name={card.iconName} size={56} className="text-accent modern-format-icon" />
+                  <div className="bg-[#8a2be2]/10 p-4 rounded-full">
+                    <Icon name={card.iconName} size={56} className="text-[#8a2be2] modern-format-icon" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-6 text-center text-primary">{card.title}</h3>
