@@ -104,27 +104,6 @@ const AnimatedIcon = ({ type, className = '', delay = 0 }: AnimatedIconProps) =>
               </linearGradient>
             </defs>
             
-            <path
-              d="M100 140 C100 140 65 110 65 85 C65 65 75 55 90 55 C98 55 100 60 100 65"
-              stroke="url(#problemGrad)"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="line-draw heart-left"
-            />
-            
-            <path
-              d="M100 140 C100 140 135 110 135 85 C135 65 125 55 110 55 C102 55 100 60 100 65"
-              stroke="url(#problemGrad)"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="line-draw heart-right"
-              style={{ animationDelay: '0.2s' }}
-            />
-            
             <line
               x1="100"
               y1="60"
@@ -198,50 +177,6 @@ const AnimatedIcon = ({ type, className = '', delay = 0 }: AnimatedIconProps) =>
             />
             <circle cx="90" cy="70" r="2.5" fill="#a78bfa" className="line-pulse-dot" />
             <circle cx="110" cy="70" r="2.5" fill="#a78bfa" className="line-pulse-dot" style={{ animationDelay: '0.1s' }} />
-            
-            <path
-              d="M96 92 Q70 85 55 95 Q45 105 50 120 Q58 130 96 110 Z"
-              stroke="url(#promiseGrad)"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="line-draw wing-flap-left"
-            />
-            
-            <path
-              d="M96 110 Q60 120 50 135 Q45 150 60 160 Q75 165 96 125 Z"
-              stroke="url(#promiseGrad)"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.7"
-              className="line-draw wing-flap-left"
-              style={{ animationDelay: '0.15s' }}
-            />
-            
-            <path
-              d="M104 92 Q130 85 145 95 Q155 105 150 120 Q142 130 104 110 Z"
-              stroke="url(#promiseGrad)"
-              strokeWidth="2.5"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="line-draw wing-flap-right"
-            />
-            
-            <path
-              d="M104 110 Q140 120 150 135 Q155 150 140 160 Q125 165 104 125 Z"
-              stroke="url(#promiseGrad)"
-              strokeWidth="2"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity="0.7"
-              className="line-draw wing-flap-right"
-              style={{ animationDelay: '0.15s' }}
-            />
           </svg>
         );
 
@@ -260,18 +195,6 @@ const AnimatedIcon = ({ type, className = '', delay = 0 }: AnimatedIconProps) =>
                 <stop offset="100%" stopColor="#c4b5fd" />
               </linearGradient>
             </defs>
-            
-            <rect
-              x="65"
-              y="75"
-              width="70"
-              height="50"
-              rx="2"
-              stroke="url(#formatGrad)"
-              strokeWidth="2.5"
-              fill="none"
-              className="line-draw"
-            />
             
             <line
               x1="100"
