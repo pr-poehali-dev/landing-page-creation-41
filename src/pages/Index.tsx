@@ -5,8 +5,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="relative bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 py-20 px-4 md:py-32">
+      <ParallaxBackground speed={0.3}>
+        <section className="py-20 px-4 md:py-32">
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="hero" className="w-32 h-32 md:w-40 md:h-40" />
@@ -85,7 +87,8 @@ const Index = () => {
             Старт: 20 января • Мест: 8
           </p>
         </div>
-      </section>
+        </section>
+      </ParallaxBackground>
 
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -121,7 +124,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-secondary/10 to-accent/10">
+      <ParallaxBackground speed={0.4} className="bg-gradient-to-br from-secondary/10 to-accent/10">
+        <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="promise" className="w-28 h-28 md:w-32 md:h-32" />
@@ -146,7 +150,8 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </ParallaxBackground>
 
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -183,7 +188,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <ParallaxBackground speed={0.35} className="bg-gradient-to-br from-primary/5 to-secondary/5">
+        <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="timeline" className="w-40 h-28 md:w-48 md:h-32" />
@@ -223,7 +229,8 @@ const Index = () => {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </ParallaxBackground>
 
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
