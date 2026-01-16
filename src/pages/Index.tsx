@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +15,12 @@ const Index = () => {
     request: "",
     contact: ""
   });
+
+  const formRef = useRef<HTMLElement>(null);
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,10 +61,10 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+            <Button size="lg" onClick={scrollToForm} className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
               Записаться в группу
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-primary text-primary hover:bg-primary/5">
+            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-lg px-8 py-6 border-2 border-primary text-primary hover:bg-primary/5">
               Получить программу
             </Button>
           </div>
@@ -362,7 +368,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section ref={formRef} className="py-20 px-4 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-6">
             Если время настало — я буду рядом
