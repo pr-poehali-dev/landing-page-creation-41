@@ -2,7 +2,9 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { RefObject } from "react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { RefObject, useState } from "react";
 
 interface FormSectionProps {
   formRef: RefObject<HTMLElement>;
@@ -19,6 +21,12 @@ interface FormSectionProps {
 }
 
 const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubmit }: FormSectionProps) => {
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [offerOpen, setOfferOpen] = useState(false);
+  const [marketingOpen, setMarketingOpen] = useState(false);
+  const [agreedPrivacy, setAgreedPrivacy] = useState(false);
+  const [agreedOffer, setAgreedOffer] = useState(false);
+  const [agreedMarketing, setAgreedMarketing] = useState(false);
   return (
     <>
       <section ref={formRef} className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
@@ -85,13 +93,74 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white text-lg h-12 md:h-14 submit-button">
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <Checkbox 
+                    id="privacy"
+                    checked={agreedPrivacy}
+                    onCheckedChange={(checked) => setAgreedPrivacy(checked as boolean)}
+                    required
+                  />
+                  <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                    Я согласен(а) с{' '}
+                    <button
+                      type="button"
+                      onClick={() => setPrivacyOpen(true)}
+                      className="text-accent hover:underline font-medium"
+                    >
+                      политикой конфиденциальности
+                    </button>
+                    {' '}и обработкой персональных данных *
+                  </label>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox 
+                    id="offer"
+                    checked={agreedOffer}
+                    onCheckedChange={(checked) => setAgreedOffer(checked as boolean)}
+                    required
+                  />
+                  <label htmlFor="offer" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                    Я согласен(а) с условиями{' '}
+                    <button
+                      type="button"
+                      onClick={() => setOfferOpen(true)}
+                      className="text-accent hover:underline font-medium"
+                    >
+                      договора оферты
+                    </button>
+                    {' '}*
+                  </label>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox 
+                    id="marketing"
+                    checked={agreedMarketing}
+                    onCheckedChange={(checked) => setAgreedMarketing(checked as boolean)}
+                  />
+                  <label htmlFor="marketing" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                    Я согласен(а) на получение{' '}
+                    <button
+                      type="button"
+                      onClick={() => setMarketingOpen(true)}
+                      className="text-accent hover:underline font-medium"
+                    >
+                      рекламной рассылки
+                    </button>
+                  </label>
+                </div>
+              </div>
+
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-accent hover:bg-accent/90 text-white text-lg h-12 md:h-14 submit-button"
+                disabled={!agreedPrivacy || !agreedOffer}
+              >
                 Отправить заявку
               </Button>
-              
-              <p className="text-xs text-center text-muted-foreground">
-                Отправляя форму, соглашаешься на обработку данных
-              </p>
             </form>
           </Card>
         </div>
@@ -104,6 +173,63 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
           </p>
         </div>
       </footer>
+
+      <Dialog open={privacyOpen} onOpenChange={setPrivacyOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Политика конфиденциальности</DialogTitle>
+            <DialogDescription>
+              Информация об обработке персональных данных
+            </DialogDescription>
+          </DialogHeader>
+          <div className="prose prose-sm max-w-none mt-4">
+            <p className="text-muted-foreground">
+              Здесь будет размещён текст политики конфиденциальности.
+            </p>
+            <p className="text-muted-foreground mt-4">
+              Пожалуйста, добавьте свой текст политики конфиденциальности в этот раздел.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={offerOpen} onOpenChange={setOfferOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Договор оферты</DialogTitle>
+            <DialogDescription>
+              Условия предоставления услуг
+            </DialogDescription>
+          </DialogHeader>
+          <div className="prose prose-sm max-w-none mt-4">
+            <p className="text-muted-foreground">
+              Здесь будет размещён текст договора оферты.
+            </p>
+            <p className="text-muted-foreground mt-4">
+              Пожалуйста, добавьте свой текст договора оферты в этот раздел.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={marketingOpen} onOpenChange={setMarketingOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl">Согласие на рекламную рассылку</DialogTitle>
+            <DialogDescription>
+              Информация о маркетинговых коммуникациях
+            </DialogDescription>
+          </DialogHeader>
+          <div className="prose prose-sm max-w-none mt-4">
+            <p className="text-muted-foreground">
+              Здесь будет размещён текст согласия на рекламную рассылку.
+            </p>
+            <p className="text-muted-foreground mt-4">
+              Пожалуйста, добавьте свой текст согласия на рекламную рассылку в этот раздел.
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 };
