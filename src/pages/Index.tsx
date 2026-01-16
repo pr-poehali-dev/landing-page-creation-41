@@ -53,7 +53,7 @@ const Index = () => {
             <AnimatedIcon type="hero" className="w-32 h-32 md:w-40 md:h-40" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6 leading-tight">
-            Верни себе право на удовольствие и близость после травмы
+            Верни себе право на удовольствие и близость
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Закрытая терапевтическая группа и курс по женской сексуальности. Без стыда. Без давления.
@@ -348,7 +348,7 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className={`w-full ${plan.featured ? 'bg-accent hover:bg-accent/90' : ''}`}>
+                <Button className={`w-full pricing-button ${plan.featured ? 'bg-accent hover:bg-accent/90 pricing-button-featured' : 'pricing-button-standard'}`}>
                   Выбрать
                 </Button>
               </Card>
