@@ -191,7 +191,7 @@ const Index = () => {
                   ))}
                 </ul>
               </Card>
-            ))
+            ))}
           </div>
         </div>
       </section>
