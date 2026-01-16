@@ -61,7 +61,7 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
               <animate
                 attributeName="stop-color"
                 values={`${colors.start};${colors.mid1};${colors.start}`}
-                dur="12s"
+                dur="8s"
                 repeatCount="indefinite"
               />
             </stop>
@@ -69,7 +69,7 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
               <animate
                 attributeName="stop-color"
                 values={`${colors.mid1};${colors.mid2};${colors.mid1}`}
-                dur="15s"
+                dur="10s"
                 repeatCount="indefinite"
               />
             </stop>
@@ -77,7 +77,7 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
               <animate
                 attributeName="stop-color"
                 values={`${colors.mid2};${colors.end};${colors.mid2}`}
-                dur="18s"
+                dur="12s"
                 repeatCount="indefinite"
               />
             </stop>
@@ -85,24 +85,24 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
               <animate
                 attributeName="stop-color"
                 values={`${colors.end};${colors.start};${colors.end}`}
-                dur="20s"
+                dur="14s"
                 repeatCount="indefinite"
               />
             </stop>
           </linearGradient>
 
           <radialGradient id={`breathGlow-${variant}-1`}>
-            <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.6" />
             <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0" />
           </radialGradient>
 
           <radialGradient id={`breathGlow-${variant}-2`}>
-            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.5" />
             <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
           </radialGradient>
 
           <radialGradient id={`breathGlow-${variant}-3`}>
-            <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.35" />
+            <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.55" />
             <stop offset="100%" stopColor="#c4b5fd" stopOpacity="0" />
           </radialGradient>
 
@@ -117,24 +117,24 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
           <ellipse
             cx={`${25 + mousePosition.x}%`}
             cy={`${30 + mousePosition.y}%`}
-            rx="250"
-            ry="180"
+            rx="320"
+            ry="240"
             fill={`url(#breathGlow-${variant}-1)`}
             className="animate-breath-slow"
           />
           <ellipse
             cx={`${70 - mousePosition.x * 0.5}%`}
             cy={`${50 - mousePosition.y * 0.5}%`}
-            rx="200"
-            ry="220"
+            rx="280"
+            ry="300"
             fill={`url(#breathGlow-${variant}-2)`}
             className="animate-breath-medium"
           />
           <ellipse
             cx={`${50 + mousePosition.x * 0.3}%`}
             cy={`${75 + mousePosition.y * 0.3}%`}
-            rx="280"
-            ry="160"
+            rx="350"
+            ry="220"
             fill={`url(#breathGlow-${variant}-3)`}
             className="animate-breath-fast"
           />

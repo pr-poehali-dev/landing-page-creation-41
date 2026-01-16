@@ -60,29 +60,29 @@ const Index = () => {
           </p>
           
           <div className="flex flex-wrap gap-4 justify-center mb-8 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm">
-              <Icon name="Calendar" size={18} className="text-primary" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Calendar" size={18} className="text-primary icon-hover" />
               <span>12 недель работы с телом и психикой</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm">
-              <Icon name="Users" size={18} className="text-primary" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Users" size={18} className="text-primary icon-hover" />
               <span>Группа 6-8 женщин</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm">
-              <Icon name="Heart" size={18} className="text-primary" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Heart" size={18} className="text-primary icon-hover" />
               <span>Сексолог и психотерапевт</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm">
-              <Icon name="Monitor" size={18} className="text-primary" />
+            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm info-badge">
+              <Icon name="Monitor" size={18} className="text-primary icon-hover" />
               <span>Онлайн + материалы</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" onClick={scrollToForm} className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+            <Button size="lg" onClick={scrollToForm} className="text-lg px-8 py-6 bg-primary hero-button-primary">
               Записаться в группу
             </Button>
-            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-lg px-8 py-6 border-2 border-primary text-primary hover:bg-primary/5">
+            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-lg px-8 py-6 border-2 border-primary text-primary hero-button-secondary">
               Получить программу
             </Button>
           </div>
@@ -327,7 +327,7 @@ const Index = () => {
             ].map((plan, idx) => (
               <Card 
                 key={idx} 
-                className={`p-8 ${plan.featured ? 'border-4 border-accent shadow-2xl scale-105 bg-gradient-to-b from-white to-accent/5' : 'border-2'} transition-all hover:shadow-xl fade-in-up ${pricingCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}
+                className={`p-8 pricing-card ${plan.featured ? 'border-4 border-accent shadow-2xl scale-105 bg-gradient-to-b from-white to-accent/5 pricing-card-featured' : 'border-2'} transition-all hover:shadow-xl fade-in-up ${pricingCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}
               >
                 {plan.featured && (
                   <div className="bg-accent text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
