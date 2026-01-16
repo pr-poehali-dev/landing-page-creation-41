@@ -7,6 +7,7 @@ import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HeroAnimation from "@/components/HeroAnimation";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useState, useRef } from "react";
 
@@ -47,48 +48,48 @@ const Index = () => {
         <AnimatedBackground variant="default" />
       </div>
       
-      <section className="py-16 md:py-24 lg:py-32 px-4 relative">
-        <AnimatedBackground variant="light" className="opacity-40" />
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="flex justify-center mb-8">
-            <AnimatedIcon type="hero" className="w-32 h-32 md:w-40 md:h-40" />
+      <section className="py-16 md:py-24 lg:py-32 px-4 relative hero-gradient-bg overflow-hidden">
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="flex justify-center mb-8 md:mb-12">
+            <HeroAnimation className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96" />
           </div>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary mb-4 md:mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white/90 mb-4 md:mb-6 leading-tight hero-text-glow px-4">
             Верни себе право на удовольствие и близость
           </h1>
-          <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 md:mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}>
             Закрытая терапевтическая группа и курс по женской сексуальности. Без стыда. Без давления.
           </p>
           
           <div className="flex flex-wrap gap-2 md:gap-4 justify-center mb-8 text-sm md:text-base">
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Calendar" size={20} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
+              <Icon name="Calendar" size={20} className="text-[#8a2be2] icon-hover" />
               <span>12 недель работы с телом и психикой</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Users" size={20} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
+              <Icon name="Users" size={20} className="text-[#8a2be2] icon-hover" />
               <span>Группа 6-8 женщин</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Heart" size={20} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
+              <Icon name="Heart" size={20} className="text-[#8a2be2] icon-hover" />
               <span>Сексолог и психотерапевт</span>
             </div>
-            <div className="flex items-center gap-2 bg-white/80 backdrop-blur px-3 md:px-4 py-2 rounded-full shadow-sm info-badge">
-              <Icon name="Monitor" size={20} className="text-primary icon-hover" />
+            <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
+              <Icon name="Monitor" size={20} className="text-[#8a2be2] icon-hover" />
               <span>Онлайн + материалы</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-primary hero-button-primary">
+            <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white text-[#8a2be2] hover:bg-white/90 shadow-lg hero-button-primary-light">
               Записаться в группу
             </Button>
-            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 border-2 border-primary text-primary hero-button-secondary">
+            <Button size="lg" onClick={scrollToForm} variant="outline" className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 border-2 border-white text-white hover:bg-white/10 shadow-lg hero-button-secondary-light">
               Получить программу
             </Button>
           </div>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm md:text-base text-white/70" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.3)' }}>
             Старт: 20 января • Мест: 8
           </p>
         </div>

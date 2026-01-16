@@ -1101,4 +1101,101 @@
       font-size: 16px;
     }
   }
+
+  .hero-petal,
+  .hero-wave,
+  .hero-heart,
+  .hero-key,
+  .hero-particle {
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-element-active {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+
+  .hero-petal.hero-element-active {
+    stroke-width: 4;
+  }
+
+  .hero-wave.hero-element-active {
+    stroke-width: 4;
+  }
+
+  .animate-breathSlow {
+    animation: breathSlow 6s ease-in-out infinite;
+  }
+
+  .animate-breathMedium {
+    animation: breathMedium 5s ease-in-out infinite;
+  }
+
+  .animate-breathFast {
+    animation: breathFast 4s ease-in-out infinite;
+  }
+
+  @keyframes heroGradientFlow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .hero-gradient-bg {
+    background: linear-gradient(
+      135deg,
+      #7dd3fc 0%,
+      #a78bfa 25%,
+      #8a2be2 50%,
+      #c4b5fd 75%,
+      #7dd3fc 100%
+    );
+    background-size: 400% 400%;
+    animation: heroGradientFlow 15s ease infinite;
+  }
+
+  .hero-text-glow {
+    text-shadow:
+      0 2px 10px rgba(255, 255, 255, 0.3),
+      0 4px 20px rgba(138, 43, 226, 0.2),
+      0 0 40px rgba(125, 211, 252, 0.15);
+  }
+
+  .hero-button-primary-light {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-button-primary-light:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 12px 30px rgba(138, 43, 226, 0.3),
+      0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-button-secondary-light {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-button-secondary-light:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow:
+      0 12px 30px rgba(255, 255, 255, 0.2),
+      0 0 0 3px rgba(255, 255, 255, 0.3);
+  }
+
+  .info-badge {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .info-badge:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+      0 8px 20px rgba(138, 43, 226, 0.2),
+      0 0 0 2px rgba(138, 43, 226, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+  }
 }
