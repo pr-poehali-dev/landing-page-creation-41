@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
-import ParallaxBackground from "@/components/ParallaxBackground";
+import AnimatedBackground from "@/components/AnimatedBackground";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useState, useRef } from "react";
 
@@ -41,9 +41,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <ParallaxBackground speed={0.3}>
-        <section className="py-20 px-4 md:py-32">
+    <div className="min-h-screen relative">
+      <div className="fixed inset-0 -z-10">
+        <AnimatedBackground variant="default" />
+      </div>
+      
+      <section className="py-20 px-4 md:py-32 relative">
+        <AnimatedBackground variant="light" className="opacity-40" />
         <div className="max-w-5xl mx-auto text-center">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="hero" className="w-32 h-32 md:w-40 md:h-40" />
@@ -87,10 +91,9 @@ const Index = () => {
             Старт: 20 января • Мест: 8
           </p>
         </div>
-        </section>
-      </ParallaxBackground>
+      </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="problem" className="w-28 h-28 md:w-32 md:h-32" />
@@ -124,8 +127,8 @@ const Index = () => {
         </div>
       </section>
 
-      <ParallaxBackground speed={0.4} className="bg-gradient-to-br from-secondary/10 to-accent/10">
-        <section className="py-20 px-4">
+      <section className="py-20 px-4 relative">
+        <AnimatedBackground variant="light" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="promise" className="w-28 h-28 md:w-32 md:h-32" />
@@ -150,10 +153,9 @@ const Index = () => {
             ))}
           </div>
         </div>
-        </section>
-      </ParallaxBackground>
+      </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="format" className="w-28 h-28 md:w-32 md:h-32" />
@@ -188,8 +190,8 @@ const Index = () => {
         </div>
       </section>
 
-      <ParallaxBackground speed={0.35} className="bg-gradient-to-br from-primary/5 to-secondary/5">
-        <section className="py-20 px-4">
+      <section className="py-20 px-4 relative">
+        <AnimatedBackground variant="accent" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="timeline" className="w-40 h-28 md:w-48 md:h-32" />
@@ -229,10 +231,9 @@ const Index = () => {
             ))}
           </div>
         </div>
-        </section>
-      </ParallaxBackground>
+      </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-12">
             Для кого программа
@@ -284,7 +285,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-accent/10 to-secondary/10">
+      <section className="py-20 px-4 relative">
+        <AnimatedBackground variant="light" className="opacity-60" />
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl p-8 md:p-12 border-2 border-accent/20 shadow-xl">
             <div className="flex flex-col md:flex-row gap-8 items-center">
@@ -311,7 +313,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-16">
             Форматы и стоимость
@@ -359,7 +361,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section className="py-20 px-4 relative">
+        <AnimatedBackground variant="default" className="opacity-50" />
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-12">
             Частые вопросы
@@ -387,7 +390,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section ref={formRef} className="py-20 px-4 bg-white">
+      <section ref={formRef} className="py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-6">
             Если время настало — я буду рядом
