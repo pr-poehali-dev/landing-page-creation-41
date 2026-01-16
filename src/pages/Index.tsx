@@ -139,14 +139,16 @@ const Index = () => {
           
           <div ref={promiseCards.elementRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "✨", title: "Уверенность в границах", text: "Говоришь да/нет, не предавая себя" },
-              { icon: "💃", title: "Восстановление чувствительности", text: "Тело откликается на нежность" },
-              { icon: "🤍", title: "Безопасность в близости", text: "Место опоры, не поле боя" },
-              { icon: "🌟", title: "Свобода от стыда", text: "Не стыдишься чувств и желаний" },
-              { icon: "🛡️", title: "Инструменты для себя", text: "Знаешь, как поддерживать себя" }
+              { iconName: "Shield", title: "Уверенность в границах", text: "Говоришь да/нет, не предавая себя" },
+              { iconName: "Sparkles", title: "Восстановление чувствительности", text: "Тело откликается на нежность" },
+              { iconName: "HeartHandshake", title: "Безопасность в близости", text: "Место опоры, не поле боя" },
+              { iconName: "Star", title: "Свобода от стыда", text: "Не стыдишься чувств и желаний" },
+              { iconName: "ShieldCheck", title: "Инструменты для себя", text: "Знаешь, как поддерживать себя" }
             ].map((item, idx) => (
-              <Card key={idx} className={`p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
-                <div className="text-4xl mb-4">{item.icon}</div>
+              <Card key={idx} className={`p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+                <div className="mb-4 flex justify-center">
+                  <Icon name={item.iconName} size={48} className="text-accent modern-animated-icon" />
+                </div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-muted-foreground">{item.text}</p>
               </Card>
@@ -169,23 +171,27 @@ const Index = () => {
           
           <div ref={formatCards.elementRef} className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: "📚", title: "Обучающий курс", features: ["12 модулей видео/аудио", "Психоэдукация", "Домашние задания", "Материалы навсегда"] },
-              { icon: "👥", title: "Закрытая группа", features: ["1 встреча/неделю 2ч", "6-8 участниц", "Онлайн + очно Владивосток", "Обсуждение и поддержка"] },
-              { icon: "💬", title: "Поддержка 24/7", features: ["Telegram-чат", "Ответы на вопросы", "Напоминания", "Доступ после курса"] }
+              { iconName: "BookOpen", title: "Обучающий курс", features: ["12 модулей видео/аудио", "Психоэдукация", "Домашние задания", "Материалы навсегда"] },
+              { iconName: "Users", title: "Закрытая группа", features: ["1 встреча/неделю 2ч", "6-8 участниц", "Онлайн + очно Владивосток", "Обсуждение и поддержка"] },
+              { iconName: "MessageCircleHeart", title: "Поддержка 24/7", features: ["Telegram-чат", "Ответы на вопросы", "Напоминания", "Доступ после курса"] }
             ].map((card, idx) => (
-              <Card key={idx} className={`p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
-                <div className="text-5xl mb-4 text-center">{card.icon}</div>
+              <Card key={idx} className={`p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-accent/10 p-4 rounded-full">
+                    <Icon name={card.iconName} size={56} className="text-accent modern-format-icon" />
+                  </div>
+                </div>
                 <h3 className="text-2xl font-bold mb-6 text-center text-primary">{card.title}</h3>
                 <ul className="space-y-3">
                   {card.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <Icon name="Check" size={20} className="text-accent mt-0.5 flex-shrink-0" />
+                      <Icon name="Check" size={20} className="text-accent mt-0.5 flex-shrink-0 icon-hover" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </Card>
-            ))}
+            ))
           </div>
         </div>
       </section>
