@@ -50,10 +50,10 @@ const Index = () => {
       
       <section className="py-16 md:py-24 lg:py-32 px-4 relative hero-gradient-bg overflow-hidden">
         <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+          <BlossomingFigure className="w-[500px] h-[600px] md:w-[600px] md:h-[700px] lg:w-[700px] lg:h-[800px] opacity-30" />
+        </div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="flex justify-center mb-8 md:mb-12">
-            <BlossomingFigure className="w-64 h-80 md:w-80 md:h-96 lg:w-96 lg:h-[500px]" />
-          </div>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white/90 mb-4 md:mb-6 leading-tight hero-text-glow px-4">
             Верни себе право на удовольствие и близость
           </h1>
