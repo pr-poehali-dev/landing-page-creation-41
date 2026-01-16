@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { useState, useRef } from "react";
 
@@ -204,9 +205,30 @@ const Index = () => {
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="timeline" className="w-40 h-28 md:w-48 md:h-32" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-16">
-            Твой путь: 12 недель шаг за шагом
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-8">
+            Твой путь: <AnimatedCounter end={12} suffix=" недель" className="text-[#8a2be2]" /> шаг за шагом
           </h2>
+          
+          <div className="flex justify-center gap-8 md:gap-16 mb-16 flex-wrap">
+            <div className="text-center">
+              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+                <AnimatedCounter end={12} />
+              </div>
+              <p className="text-muted-foreground">встреч в группе</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+                <AnimatedCounter end={6} suffix="-8" />
+              </div>
+              <p className="text-muted-foreground">участниц</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl md:text-6xl font-bold text-[#8a2be2] mb-2">
+                <AnimatedCounter end={24} />
+              </div>
+              <p className="text-muted-foreground">часа работы</p>
+            </div>
+          </div>
           
           <div ref={timelineCards.elementRef} className="space-y-8">
             {[
@@ -217,10 +239,10 @@ const Index = () => {
               { weeks: "9-10", title: "Партнёрство", items: ["Как говорить о травме", "Правила безопасности", "Восстановление близости"] },
               { weeks: "11-12", title: "Интеграция", items: ["Подведение итогов", "План на 3-6 месяцев", "Ритуал завершения"] }
             ].map((phase, idx) => (
-              <Card key={idx} className={`p-6 md:p-8 bg-white border-2 hover:border-secondary transition-all fade-in-up ${timelineCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+              <Card key={idx} className={`p-6 md:p-8 bg-white border-2 hover:border-secondary transition-all fade-in-up timeline-card ${timelineCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <div className="flex-shrink-0">
-                    <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold">
+                    <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold timeline-badge">
                       {phase.weeks}
                     </div>
                   </div>
