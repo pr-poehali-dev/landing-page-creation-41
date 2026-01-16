@@ -5,7 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 import AnimatedIcon from "@/components/AnimatedIcon";
-import { useState, useRef } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import { useState, useRef, useEffect } from "react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,20 @@ const Index = () => {
   });
 
   const formRef = useRef<HTMLElement>(null);
+  const [formHighlight, setFormHighlight] = useState(false);
+  const problemCards = useIntersectionObserver();
+  const promiseCards = useIntersectionObserver();
+  const formatCards = useIntersectionObserver();
+  const timelineCards = useIntersectionObserver();
+  const targetCards = useIntersectionObserver();
+  const pricingCards = useIntersectionObserver();
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => {
+      setFormHighlight(true);
+      setTimeout(() => setFormHighlight(false), 2000);
+    }, 600);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -118,7 +130,7 @@ const Index = () => {
             Как может выглядеть твоя жизнь через 12 недель
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div ref={promiseCards.elementRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: "✨", title: "Уверенность в границах", text: "Говоришь да/нет, не предавая себя" },
               { icon: "💃", title: "Восстановление чувствительности", text: "Тело откликается на нежность" },
@@ -126,7 +138,7 @@ const Index = () => {
               { icon: "🌟", title: "Свобода от стыда", text: "Не стыдишься чувств и желаний" },
               { icon: "🛡️", title: "Инструменты для себя", text: "Знаешь, как поддерживать себя" }
             ].map((item, idx) => (
-              <Card key={idx} className="p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg">
+              <Card key={idx} className={`p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="text-4xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-muted-foreground">{item.text}</p>
@@ -148,13 +160,13 @@ const Index = () => {
             Три мощных инструмента для восстановления
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div ref={formatCards.elementRef} className="grid md:grid-cols-3 gap-8">
             {[
               { icon: "📚", title: "Обучающий курс", features: ["12 модулей видео/аудио", "Психоэдукация", "Домашние задания", "Материалы навсегда"] },
               { icon: "👥", title: "Закрытая группа", features: ["1 встреча/неделю 2ч", "6-8 участниц", "Онлайн + очно Владивосток", "Обсуждение и поддержка"] },
               { icon: "💬", title: "Поддержка 24/7", features: ["Telegram-чат", "Ответы на вопросы", "Напоминания", "Доступ после курса"] }
             ].map((card, idx) => (
-              <Card key={idx} className="p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5">
+              <Card key={idx} className={`p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="text-5xl mb-4 text-center">{card.icon}</div>
                 <h3 className="text-2xl font-bold mb-6 text-center text-primary">{card.title}</h3>
                 <ul className="space-y-3">
@@ -180,7 +192,7 @@ const Index = () => {
             Твой путь: 12 недель шаг за шагом
           </h2>
           
-          <div className="space-y-8">
+          <div ref={timelineCards.elementRef} className="space-y-8">
             {[
               { weeks: "1-2", title: "Понимание травмы", items: ["Что такое травма", "Почему так реагируешь", "Нормализация"] },
               { weeks: "3-4", title: "Безопасность", items: ["Техники дыхания", "Возврат в тело", "Якорь безопасности"] },
@@ -189,7 +201,7 @@ const Index = () => {
               { weeks: "9-10", title: "Партнёрство", items: ["Как говорить о травме", "Правила безопасности", "Восстановление близости"] },
               { weeks: "11-12", title: "Интеграция", items: ["Подведение итогов", "План на 3-6 месяцев", "Ритуал завершения"] }
             ].map((phase, idx) => (
-              <Card key={idx} className="p-6 md:p-8 bg-white border-2 hover:border-secondary transition-all">
+              <Card key={idx} className={`p-6 md:p-8 bg-white border-2 hover:border-secondary transition-all fade-in-up ${timelineCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold">
@@ -219,8 +231,8 @@ const Index = () => {
             Для кого программа
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 border-2 border-accent/30 bg-accent/5">
+          <div ref={targetCards.elementRef} className="grid md:grid-cols-2 gap-8">
+            <Card className={`p-8 border-2 border-accent/30 bg-accent/5 fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-1`}>
               <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
                 <Icon name="Check" size={28} className="text-accent" />
                 Подходит
@@ -241,7 +253,7 @@ const Index = () => {
               </ul>
             </Card>
 
-            <Card className="p-8 border-2 border-muted">
+            <Card className={`p-8 border-2 border-muted fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-2`}>
               <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
                 <Icon name="X" size={28} className="text-muted-foreground" />
                 Не подходит
@@ -298,7 +310,7 @@ const Index = () => {
             Форматы и стоимость
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div ref={pricingCards.elementRef} className="grid md:grid-cols-3 gap-8">
             {[
               { name: "Лайт", icon: "📚", price: "7 900₽", featured: false, features: ["Все модули курса", "Домашние задания", "Без группы", "Без чата"] },
               { name: "Группа+курс", icon: "👥", price: "15 900₽", installment: "5 300₽×3", featured: true, features: ["12 встреч по 2ч", "Все материалы", "Чат поддержки", "Сообщения между встречами"] },
@@ -306,7 +318,7 @@ const Index = () => {
             ].map((plan, idx) => (
               <Card 
                 key={idx} 
-                className={`p-8 ${plan.featured ? 'border-4 border-accent shadow-2xl scale-105 bg-gradient-to-b from-white to-accent/5' : 'border-2'} transition-all hover:shadow-xl`}
+                className={`p-8 ${plan.featured ? 'border-4 border-accent shadow-2xl scale-105 bg-gradient-to-b from-white to-accent/5' : 'border-2'} transition-all hover:shadow-xl fade-in-up ${pricingCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}
               >
                 {plan.featured && (
                   <div className="bg-accent text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
@@ -377,7 +389,7 @@ const Index = () => {
             Оставь заявку, обсудим формат
           </p>
           
-          <Card className="p-8 border-2 border-accent/30 bg-gradient-to-br from-white to-secondary/5">
+          <Card className={`p-8 border-2 border-accent/30 bg-gradient-to-br from-white to-secondary/5 form-highlight ${formHighlight ? 'active' : ''}`}>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2 text-primary">Имя *</label>
