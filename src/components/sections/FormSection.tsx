@@ -29,7 +29,7 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
   const [agreedMarketing, setAgreedMarketing] = useState(false);
   return (
     <>
-      <section ref={formRef} className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section id="contact" ref={formRef} className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-6">
             Если время настало — я буду рядом
@@ -38,7 +38,7 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
             Оставь заявку, обсудим формат
           </p>
           
-          <Card className={`p-6 md:p-8 border-2 border-accent/30 bg-gradient-to-br from-white to-secondary/5 form-highlight ${formHighlight ? 'active' : ''}`}>
+          <Card className={`p-6 md:p-8 border-2 border-[#a87c4c]/30 bg-gradient-to-br from-white to-[#a87c4c]/5 form-highlight ${formHighlight ? 'active' : ''}`}>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2 text-primary">Имя *</label>

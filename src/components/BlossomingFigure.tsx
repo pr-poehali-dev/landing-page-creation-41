@@ -38,21 +38,21 @@ const BlossomingFigure = ({ className = '' }: BlossomingFigureProps) => {
       >
         <defs>
           <linearGradient id="starGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#8a2be2" stopOpacity="0.3" />
-            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#c4b5fd" stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#a87c4c" stopOpacity="0.25" />
+            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#c9a882" stopOpacity="0.25" />
           </linearGradient>
           
           <linearGradient id="starGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.35" />
-            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.65" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.35" />
+            <stop offset="0%" stopColor="#8d6a3e" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#a87c4c" stopOpacity="0.3" />
           </linearGradient>
 
           <linearGradient id="starGradient3" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.28" />
-            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.58" />
-            <stop offset="100%" stopColor="#8a2be2" stopOpacity="0.28" />
+            <stop offset="0%" stopColor="#c9a882" stopOpacity="0.23" />
+            <stop offset="50%" stopColor="#ffffff" stopOpacity="0.48" />
+            <stop offset="100%" stopColor="#a87c4c" stopOpacity="0.23" />
           </linearGradient>
 
           <filter id="starGlow">

@@ -16,7 +16,7 @@ const ContentSections = () => {
 
   return (
     <>
-      <section className="py-12 md:py-20 px-4 relative">
+      <section id="promise" className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="light" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
@@ -34,9 +34,9 @@ const ContentSections = () => {
               { iconName: "Star", title: "Свобода от стыда", text: "Не стыдишься чувств и желаний" },
               { iconName: "ShieldCheck", title: "Инструменты для себя", text: "Знаешь, как поддерживать себя" }
             ].map((item, idx) => (
-              <Card key={idx} className={`p-4 md:p-6 bg-white border-2 border-white hover:border-accent transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+              <Card key={idx} className={`p-4 md:p-6 bg-white/70 backdrop-blur-sm border-2 border-white hover:border-[#a87c4c] transition-all hover:shadow-lg fade-in-up modern-icon-card ${promiseCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="mb-4 flex justify-center">
-                  <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#8a2be2] modern-animated-icon" />
+                  <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#a87c4c] modern-animated-icon" />
                 </div>
                 <h3 className="text-lg md:text-xl font-semibold mb-2 text-primary">{item.title}</h3>
                 <p className="text-sm md:text-base text-muted-foreground">{item.text}</p>
@@ -46,7 +46,7 @@ const ContentSections = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section id="format" className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="format" className="w-28 h-28 md:w-32 md:h-32" />
@@ -64,10 +64,10 @@ const ContentSections = () => {
               { iconName: "Users", title: "Закрытая группа", features: ["1 встреча/неделю 2ч", "6-8 участниц", "Онлайн + очно Владивосток", "Обсуждение и поддержка"] },
               { iconName: "MessageCircleHeart", title: "Поддержка 24/7", features: ["Telegram-чат", "Ответы на вопросы", "Напоминания", "Доступ после курса"] }
             ].map((card, idx) => (
-              <Card key={idx} className={`p-6 md:p-8 border-2 hover:border-accent transition-all hover:shadow-xl bg-gradient-to-b from-white to-secondary/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+              <Card key={idx} className={`p-6 md:p-8 border-2 hover:border-[#a87c4c] transition-all hover:shadow-xl bg-gradient-to-b from-white to-[#a87c4c]/5 fade-in-up modern-format-card ${formatCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="mb-4 md:mb-6 flex justify-center">
-                  <div className="bg-[#8a2be2]/10 p-3 md:p-4 rounded-full">
-                    <Icon name={card.iconName} className="w-12 h-12 md:w-14 md:h-14 text-[#8a2be2] modern-format-icon" />
+                  <div className="bg-[#a87c4c]/10 p-3 md:p-4 rounded-full">
+                    <Icon name={card.iconName} className="w-12 h-12 md:w-14 md:h-14 text-[#a87c4c] modern-format-icon" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-6 text-center text-primary">{card.title}</h3>
@@ -85,31 +85,31 @@ const ContentSections = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 px-4 relative">
+      <section id="timeline" className="py-12 md:py-20 px-4 relative">
         <AnimatedBackground variant="accent" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
             <AnimatedIcon type="timeline" className="w-40 h-28 md:w-48 md:h-32" />
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-8">
-            Твой путь: <AnimatedCounter end={12} suffix=" недель" className="text-[#8a2be2]" /> шаг за шагом
+            Твой путь: <AnimatedCounter end={12} suffix=" недель" className="text-[#a87c4c]" /> шаг за шагом
           </h2>
           
           <div className="flex justify-center gap-6 md:gap-8 lg:gap-16 mb-12 md:mb-16 flex-wrap">
             <div className="text-center">
-              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#a87c4c] mb-2">
                 <AnimatedCounter end={12} />
               </div>
               <p className="text-sm md:text-base text-muted-foreground">встреч в группе</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#a87c4c] mb-2">
                 <AnimatedCounter end={6} suffix="-8" />
               </div>
               <p className="text-sm md:text-base text-muted-foreground">участниц</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#8a2be2] mb-2">
+              <div className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#a87c4c] mb-2">
                 <AnimatedCounter end={24} />
               </div>
               <p className="text-sm md:text-base text-muted-foreground">часа работы</p>
@@ -125,7 +125,7 @@ const ContentSections = () => {
               { weeks: "9-10", title: "Партнёрство", items: ["Как говорить о травме", "Правила безопасности", "Восстановление близости"] },
               { weeks: "11-12", title: "Интеграция", items: ["Подведение итогов", "План на 3-6 месяцев", "Ритуал завершения"] }
             ].map((phase, idx) => (
-              <Card key={idx} className={`p-6 md:p-8 bg-white border-2 hover:border-secondary transition-all fade-in-up timeline-card ${timelineCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
+              <Card key={idx} className={`p-6 md:p-8 bg-white/70 backdrop-blur-sm border-2 hover:border-[#a87c4c] transition-all fade-in-up timeline-card ${timelineCards.isVisible ? 'visible' : ''} stagger-${idx + 1}`}>
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
                   <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-lg font-bold timeline-badge">
@@ -136,7 +136,7 @@ const ContentSections = () => {
                     <h3 className="text-2xl font-bold mb-3 text-primary">{phase.title}</h3>
                     <div className="flex flex-wrap gap-2">
                       {phase.items.map((item, i) => (
-                        <span key={i} className="bg-secondary/20 text-primary px-3 py-1 rounded-full text-sm">
+                        <span key={i} className="bg-[#a87c4c]/20 text-primary px-3 py-1 rounded-full text-sm">
                           {item}
                         </span>
                       ))}
@@ -156,9 +156,9 @@ const ContentSections = () => {
           </h2>
           
           <div ref={targetCards.elementRef} className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <Card className={`p-6 md:p-8 border-2 border-accent/30 bg-accent/5 fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-1`}>
+            <Card className={`p-6 md:p-8 border-2 border-[#a87c4c]/30 bg-[#a87c4c]/5 fade-in-up ${targetCards.isVisible ? 'visible' : ''} stagger-1`}>
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-primary flex items-center gap-2">
-                <Icon name="Check" size={24} className="text-accent" />
+                <Icon name="Check" size={24} className="text-[#a87c4c]" />
                 Подходит
               </h3>
               <ul className="space-y-2 md:space-y-3">

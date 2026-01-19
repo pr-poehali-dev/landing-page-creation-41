@@ -24,24 +24,24 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
     switch (variant) {
       case 'light':
         return {
-          start: '#e0f2fe',
-          mid1: '#ddd6fe',
-          mid2: '#fae8ff',
-          end: '#fef3c7',
+          start: '#f5f1ed',
+          mid1: '#ebe4dc',
+          mid2: '#e8dfd5',
+          end: '#f0e9e1',
         };
       case 'accent':
         return {
-          start: '#7dd3fc',
-          mid1: '#a78bfa',
-          mid2: '#c4b5fd',
-          end: '#f0abfc',
+          start: '#c9a882',
+          mid1: '#a87c4c',
+          mid2: '#8d6a3e',
+          end: '#6b4423',
         };
       default:
         return {
-          start: '#bae6fd',
-          mid1: '#c4b5fd',
-          mid2: '#e9d5ff',
-          end: '#fed7aa',
+          start: '#f5f1ed',
+          mid1: '#e8dfd5',
+          mid2: '#c9a882',
+          end: '#a87c4c',
         };
     }
   };
@@ -92,18 +92,18 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
           </linearGradient>
 
           <radialGradient id={`breathGlow-${variant}-1`}>
-            <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0" />
+            <stop offset="0%" stopColor="#a87c4c" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#a87c4c" stopOpacity="0" />
           </radialGradient>
 
           <radialGradient id={`breathGlow-${variant}-2`}>
-            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.5" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
+            <stop offset="0%" stopColor="#c9a882" stopOpacity="0.12" />
+            <stop offset="100%" stopColor="#c9a882" stopOpacity="0" />
           </radialGradient>
 
           <radialGradient id={`breathGlow-${variant}-3`}>
-            <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.55" />
-            <stop offset="100%" stopColor="#c4b5fd" stopOpacity="0" />
+            <stop offset="0%" stopColor="#8d6a3e" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#8d6a3e" stopOpacity="0" />
           </radialGradient>
 
           <filter id="blur">
@@ -111,7 +111,7 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
           </filter>
         </defs>
 
-        <rect width="100%" height="100%" fill={`url(#flowGrad-${variant})`} opacity="0.15" />
+        <rect width="100%" height="100%" fill={`url(#flowGrad-${variant})`} opacity="0.08" />
 
         <g filter="url(#blur)">
           <ellipse
@@ -140,13 +140,13 @@ const AnimatedBackground = ({ variant = 'default', className = '' }: AnimatedBac
           />
         </g>
 
-        <g opacity="0.08">
-          <circle cx="15%" cy="20%" r="3" fill="#7dd3fc" className="animate-float-1" />
-          <circle cx="85%" cy="30%" r="2" fill="#a78bfa" className="animate-float-2" />
-          <circle cx="30%" cy="70%" r="2.5" fill="#c4b5fd" className="animate-float-3" />
-          <circle cx="75%" cy="85%" r="3" fill="#f0abfc" className="animate-float-1" />
-          <circle cx="50%" cy="45%" r="2" fill="#7dd3fc" className="animate-float-2" />
-          <circle cx="65%" cy="65%" r="2.5" fill="#a78bfa" className="animate-float-3" />
+        <g opacity="0.06">
+          <circle cx="15%" cy="20%" r="3" fill="#a87c4c" className="animate-float-1" />
+          <circle cx="85%" cy="30%" r="2" fill="#c9a882" className="animate-float-2" />
+          <circle cx="30%" cy="70%" r="2.5" fill="#8d6a3e" className="animate-float-3" />
+          <circle cx="75%" cy="85%" r="3" fill="#a87c4c" className="animate-float-1" />
+          <circle cx="50%" cy="45%" r="2" fill="#c9a882" className="animate-float-2" />
+          <circle cx="65%" cy="65%" r="2.5" fill="#8d6a3e" className="animate-float-3" />
         </g>
       </svg>
     </div>

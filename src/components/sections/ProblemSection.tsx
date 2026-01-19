@@ -22,9 +22,9 @@ const ProblemSection = () => {
             { iconName: "MessageSquareOff", title: "Молчание", text: "Не знаешь, с кем разделить боль" },
             { iconName: "Ban", title: "Избегание близости", text: "Или согласие через силу" }
           ].map((item, idx) => (
-            <Card key={idx} className="p-4 md:p-6 border-2 hover:border-secondary/50 transition-all problem-card">
+            <Card key={idx} className="p-4 md:p-6 border-2 hover:border-[#a87c4c]/50 transition-all problem-card bg-white/70 backdrop-blur-sm">
               <div className="mb-4 flex justify-center">
-                <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#8a2be2] problem-icon" />
+                <Icon name={item.iconName} className="w-10 h-10 md:w-12 md:h-12 text-[#a87c4c] problem-icon" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
               <p className="text-muted-foreground">{item.text}</p>
@@ -33,7 +33,7 @@ const ProblemSection = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <p className="text-lg md:text-xl text-primary font-medium bg-secondary/10 p-4 md:p-6 rounded-lg inline-block">
+          <p className="text-lg md:text-xl text-primary font-medium bg-[#a87c4c]/10 p-4 md:p-6 rounded-lg inline-block">
             Ты не сломана. Это естественная реакция на травму. С этим можно работать.
           </p>
         </div>

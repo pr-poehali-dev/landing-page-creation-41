@@ -39,7 +39,7 @@ const ParallaxBackground = ({ speed = 0.5, className = '', children }: ParallaxB
           transform: `translateY(${offsetY * speed}px) translateX(${mousePosition.x * 0.3}px)`,
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#8a2be2]/5 via-secondary/5 to-accent/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#a87c4c]/5 via-[#c9a882]/5 to-[#8d6a3e]/5" />
         
         <svg
           className="absolute inset-0 w-full h-full opacity-40"
@@ -54,12 +54,12 @@ const ParallaxBackground = ({ speed = 0.5, className = '', children }: ParallaxB
               height="30"
               patternUnits="userSpaceOnUse"
             >
-              <circle cx="2" cy="2" r="1.5" fill="#8a2be2" opacity="0.15" />
+              <circle cx="2" cy="2" r="1.5" fill="#a87c4c" opacity="0.15" />
             </pattern>
             <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#8a2be2" stopOpacity="0.15" />
-              <stop offset="50%" stopColor="#9370db" stopOpacity="0.2" />
-              <stop offset="100%" stopColor="#ba55d3" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#a87c4c" stopOpacity="0.12" />
+              <stop offset="50%" stopColor="#c9a882" stopOpacity="0.15" />
+              <stop offset="100%" stopColor="#8d6a3e" stopOpacity="0.12" />
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="4" result="coloredBlur"/>

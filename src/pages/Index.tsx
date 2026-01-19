@@ -1,4 +1,4 @@
-import AnimatedBackground from "@/components/AnimatedBackground";
+import DoubleLayerBackground from "@/components/DoubleLayerBackground";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import ContentSections from "@/components/sections/ContentSections";
@@ -33,7 +33,7 @@ const Index = () => {
   return (
     <div className="min-h-screen relative">
       <div className="fixed inset-0 -z-10">
-        <AnimatedBackground variant="default" />
+        <DoubleLayerBackground variant="default" />
       </div>
       
       <HeroSection scrollToForm={scrollToForm} />

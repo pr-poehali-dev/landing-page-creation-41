@@ -1,58 +1,124 @@
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
-import BlossomingFigure from "@/components/BlossomingFigure";
+import { useState, useEffect } from "react";
 
 interface HeroSectionProps {
   scrollToForm: () => void;
 }
 
 const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
+  const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="py-16 md:py-24 lg:py-32 px-4 relative hero-gradient-bg overflow-hidden">
-      <div className="absolute inset-0 bg-white/10 backdrop-blur-sm" />
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-        <BlossomingFigure className="w-[500px] h-[600px] md:w-[600px] md:h-[700px] lg:w-[700px] lg:h-[800px] opacity-30" />
-      </div>
-      <div className="max-w-5xl mx-auto text-center relative z-10">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white/90 mb-4 md:mb-6 leading-tight hero-text-glow px-4">
-          Верни себе право на удовольствие и близость
-        </h1>
-        <p className="text-lg md:text-xl lg:text-2xl text-white/80 mb-6 md:mb-8 max-w-3xl mx-auto px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}>
-          Закрытая терапевтическая группа и курс по женской сексуальности. Без стыда. Без давления.
-        </p>
-        
-        <div className="flex flex-wrap gap-2 md:gap-4 justify-center mb-8 text-sm md:text-base">
-          <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
-            <Icon name="Calendar" size={20} className="text-[#8a2be2] icon-hover" />
-            <span>12 недель работы с телом и психикой</span>
+    <>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#f5f1ed]/90 backdrop-blur-md shadow-sm' : ''}`}>
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="text-2xl font-light tracking-[0.3em] text-[#2d2d2d]">
+            VETRUK
           </div>
-          <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
-            <Icon name="Users" size={20} className="text-[#8a2be2] icon-hover" />
-            <span>Группа 6-8 женщин</span>
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#promise" className="text-sm text-[#2d2d2d] hover:text-[#a87c4c] transition-colors">
+              О программе
+            </a>
+            <a href="#format" className="text-sm text-[#2d2d2d] hover:text-[#a87c4c] transition-colors">
+              Формат
+            </a>
+            <a href="#timeline" className="text-sm text-[#2d2d2d] hover:text-[#a87c4c] transition-colors">
+              График
+            </a>
+            <a href="#contact" className="text-sm text-[#2d2d2d] hover:text-[#a87c4c] transition-colors">
+              Контакт
+            </a>
           </div>
+        </div>
+      </nav>
 
-          <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 md:px-4 py-2 rounded-full shadow-lg info-badge border border-white/50">
-            <Icon name="Monitor" size={20} className="text-[#8a2be2] icon-hover" />
-            <span>Онлайн + материалы</span>
+      <section className="relative min-h-screen flex items-center pt-20">
+        <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className={`space-y-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className="text-6xl md:text-7xl font-light tracking-wider text-[#2d2d2d] leading-tight">
+                ВЕТРЮК<br/>АННА
+              </h1>
+              
+              <h2 className="text-2xl text-[#a87c4c] font-normal leading-relaxed">
+                Закрытая терапевтическая группа<br/>и курс по женской сексуальности
+              </h2>
+              
+              <p className="text-lg italic text-[#a87c4c] font-light">
+                Без стыда. Без давления.
+              </p>
+              
+              <p className="text-base text-gray-600 leading-relaxed max-w-xl">
+                Программа восстановления женской сексуальности и работы с травмой. 
+                Безопасное пространство для исцеления, роста и возвращения к себе.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Button 
+                  size="lg"
+                  className="bg-gradient-to-r from-[#a87c4c] to-[#8d6a3e] hover:from-[#8d6a3e] hover:to-[#75562f] text-white rounded-full px-8 py-6 text-base transition-all shadow-lg hover:shadow-xl"
+                  onClick={() => window.open('https://t.me/annavetruk', '_blank')}
+                >
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Написать в Telegram
+                </Button>
+                
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-[#a87c4c] text-[#a87c4c] hover:bg-[#a87c4c] hover:text-white rounded-full px-8 py-6 text-base transition-all"
+                  onClick={scrollToForm}
+                >
+                  Записаться в группу
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2 text-sm">
+                <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <Icon name="Calendar" size={18} className="text-[#a87c4c]" />
+                  <span className="text-gray-700">12 недель</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <Icon name="Users" size={18} className="text-[#a87c4c]" />
+                  <span className="text-gray-700">6-8 женщин</span>
+                </div>
+                <div className="flex items-center gap-2 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full">
+                  <Icon name="Monitor" size={18} className="text-[#a87c4c]" />
+                  <span className="text-gray-700">Онлайн</span>
+                </div>
+              </div>
+            </div>
+
+            <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <div className="relative aspect-[3/4] bg-gradient-to-br from-[#a87c4c]/20 to-[#8d6a3e]/10 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-[#a87c4c]/30">
+                    <Icon name="User" size={120} />
+                    <p className="text-sm mt-4 italic">Ваше фото будет здесь</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-          <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white/95 text-[#8a2be2] shadow-lg hero-cta-button border-2 border-white/50">
-            <Icon name="UserPlus" size={20} className="mr-2" />
-            Записаться в группу
-          </Button>
-          <Button size="lg" onClick={scrollToForm} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 bg-white/95 text-[#8a2be2] shadow-lg hero-cta-button border-2 border-white/50">
-            <Icon name="FileText" size={20} className="mr-2" />
-            Получить программу
-          </Button>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#a87c4c]/60">
+          <span className="text-xs tracking-wider">ПРОКРУТИТЕ ВНИЗ</span>
+          <Icon name="ChevronDown" size={20} className="animate-bounce" />
         </div>
-
-        <p className="text-sm md:text-base text-white/70" style={{ textShadow: '0 1px 5px rgba(0,0,0,0.3)' }}>
-          Старт: 20 января • Мест: 8
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
