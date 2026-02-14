@@ -7,51 +7,51 @@
 
 @layer base {
   :root {
-    --background: 33 20% 96%;
-    --foreground: 0 0% 18%;
+    --background: 217 32% 12%;
+    --foreground: 36 33% 88%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 18%;
+    --card: 215 28% 17%;
+    --card-foreground: 36 33% 88%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
+    --popover: 215 28% 17%;
+    --popover-foreground: 36 33% 88%;
 
-    --primary: 0 0% 18%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 36 62% 68%;
+    --primary-foreground: 217 32% 12%;
 
-    --secondary: 28 35% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 36 45% 55%;
+    --secondary-foreground: 217 32% 12%;
 
-    --muted: 33 15% 85%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 215 20% 25%;
+    --muted-foreground: 36 15% 65%;
 
-    --accent: 28 35% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 36 62% 68%;
+    --accent-foreground: 217 32% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 36 33% 88%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 36 62% 68%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 215 28% 17%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-foreground: 36 33% 88%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 36 62% 68%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: 217 32% 12%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent: 215 20% 25%;
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-accent-foreground: 36 33% 88%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 215 20% 25%;
 
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 36 62% 68%;
   }
 
   .dark {
@@ -1146,23 +1146,16 @@
   }
 
   .hero-gradient-bg {
-    background: linear-gradient(
-      135deg,
-      #c9a882 0%,
-      #a87c4c 25%,
-      #8d6a3e 50%,
-      #a87c4c 75%,
-      #c9a882 100%
-    );
+    background: linear-gradient(135deg, #f7ba72 0%, #ffdeb5 50%, #f7ba72 100%);
     background-size: 400% 400%;
     animation: heroGradientFlow 15s ease infinite;
   }
 
   .hero-text-glow {
     text-shadow:
-      0 2px 10px rgba(255, 255, 255, 0.3),
-      0 4px 20px rgba(168, 124, 76, 0.15),
-      0 0 40px rgba(201, 168, 130, 0.12);
+      0 2px 10px rgba(247, 186, 114, 0.4),
+      0 4px 20px rgba(247, 186, 114, 0.25),
+      0 0 40px rgba(255, 222, 181, 0.2);
   }
 
   .hero-button-primary-light {
@@ -1172,8 +1165,8 @@
   .hero-button-primary-light:hover {
     transform: translateY(-3px);
     box-shadow:
-      0 12px 30px rgba(168, 124, 76, 0.25),
-      0 0 0 3px rgba(255, 255, 255, 0.5);
+      0 12px 30px rgba(247, 186, 114, 0.4),
+      0 0 20px rgba(247, 186, 114, 0.3);
   }
 
   .hero-button-secondary-light {
@@ -1195,9 +1188,9 @@
   .info-badge:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow:
-      0 8px 20px rgba(168, 124, 76, 0.15),
-      0 0 0 2px rgba(168, 124, 76, 0.08);
-    background: rgba(255, 255, 255, 0.95);
+      0 8px 20px rgba(247, 186, 114, 0.25),
+      0 0 0 2px rgba(200, 154, 90, 0.3);
+    background: rgba(28, 35, 48, 0.95);
   }
 
   .hero-cta-button {
@@ -1216,8 +1209,8 @@
     border-radius: 50%;
     background: radial-gradient(
       circle,
-      rgba(168, 124, 76, 0.25) 0%,
-      rgba(201, 168, 130, 0.15) 50%,
+      rgba(247, 186, 114, 0.3) 0%,
+      rgba(255, 222, 181, 0.2) 50%,
       transparent 70%
     );
     transform: translate(-50%, -50%);
@@ -1233,14 +1226,14 @@
     transform: translateY(-4px);
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0.95) 100%
+      rgba(247, 186, 114, 1) 0%,
+      rgba(255, 222, 181, 1) 50%,
+      rgba(247, 186, 114, 1) 100%
     ) !important;
     box-shadow:
-      0 15px 35px rgba(168, 124, 76, 0.3),
-      0 0 0 3px rgba(168, 124, 76, 0.25),
-      0 0 20px rgba(201, 168, 130, 0.35);
+      0 15px 35px rgba(247, 186, 114, 0.5),
+      0 0 0 3px rgba(247, 186, 114, 0.4),
+      0 0 20px rgba(255, 222, 181, 0.6);
     animation: buttonShimmer 2s ease-in-out infinite;
   }
 
@@ -1271,7 +1264,7 @@
   .hero-cta-button:active {
     transform: translateY(-2px);
     box-shadow:
-      0 8px 20px rgba(138, 43, 226, 0.4),
-      0 0 0 3px rgba(138, 43, 226, 0.3);
+      0 8px 20px rgba(247, 186, 114, 0.5),
+      0 0 0 3px rgba(247, 186, 114, 0.4);
   }
 }

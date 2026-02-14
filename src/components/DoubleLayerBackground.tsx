@@ -8,21 +8,21 @@ const DoubleLayerBackground = ({ variant = 'default', className = '' }: DoubleLa
     switch (variant) {
       case 'light':
         return {
-          base: '#f5f1ed',
-          overlay1: '#a87c4c',
-          overlay2: '#c9a882',
+          base: '#111722',
+          overlay1: '#F7BA72',
+          overlay2: '#FFDEB5',
         };
       case 'accent':
         return {
-          base: '#f5f1ed',
-          overlay1: '#8d6a3e',
-          overlay2: '#a87c4c',
+          base: '#111722',
+          overlay1: '#C89A5A',
+          overlay2: '#F7BA72',
         };
       default:
         return {
-          base: '#f5f1ed',
-          overlay1: '#a87c4c',
-          overlay2: '#6b4423',
+          base: '#111722',
+          overlay1: '#F7BA72',
+          overlay2: '#C89A5A',
         };
     }
   };
@@ -38,33 +38,33 @@ const DoubleLayerBackground = ({ variant = 'default', className = '' }: DoubleLa
       >
         <defs>
           <pattern id={`dots-${variant}`} x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <circle cx="20" cy="20" r="1.5" fill={colors.overlay1} opacity="0.08" />
+            <circle cx="20" cy="20" r="1.5" fill={colors.overlay1} opacity="0.12" />
           </pattern>
           
           <pattern id={`lines-${variant}`} x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
             <path
               d="M 0 50 Q 25 30, 50 50 T 100 50"
               stroke={colors.overlay2}
-              strokeWidth="0.5"
+              strokeWidth="1"
               fill="none"
-              opacity="0.06"
+              opacity="0.08"
             />
             <path
               d="M 0 80 Q 25 60, 50 80 T 100 80"
               stroke={colors.overlay2}
-              strokeWidth="0.5"
+              strokeWidth="1"
               fill="none"
-              opacity="0.06"
+              opacity="0.08"
             />
           </pattern>
 
           <radialGradient id={`glow1-${variant}`}>
-            <stop offset="0%" stopColor={colors.overlay1} stopOpacity="0.12" />
+            <stop offset="0%" stopColor={colors.overlay1} stopOpacity="0.15" />
             <stop offset="100%" stopColor={colors.overlay1} stopOpacity="0" />
           </radialGradient>
 
           <radialGradient id={`glow2-${variant}`}>
-            <stop offset="0%" stopColor={colors.overlay2} stopOpacity="0.08" />
+            <stop offset="0%" stopColor={colors.overlay2} stopOpacity="0.12" />
             <stop offset="100%" stopColor={colors.overlay2} stopOpacity="0" />
           </radialGradient>
 

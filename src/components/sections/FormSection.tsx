@@ -6,17 +6,19 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { RefObject, useState } from "react";
 
+interface FormData {
+  name: string;
+  age: string;
+  city: string;
+  request: string;
+  contact: string;
+}
+
 interface FormSectionProps {
   formRef: RefObject<HTMLElement>;
   formHighlight: boolean;
-  formData: {
-    name: string;
-    age: string;
-    city: string;
-    request: string;
-    contact: string;
-  };
-  setFormData: (data: any) => void;
+  formData: FormData;
+  setFormData: (data: FormData) => void;
   handleSubmit: (e: React.FormEvent) => void;
 }
 
@@ -29,67 +31,67 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
   const [agreedMarketing, setAgreedMarketing] = useState(false);
   return (
     <>
-      <section id="contact" ref={formRef} className="py-12 md:py-20 px-4 bg-white/95 relative backdrop-blur-sm">
+      <section id="contact" ref={formRef} className="py-12 md:py-20 px-4 bg-[#111722] relative backdrop-blur-sm border-t-2 border-[#C89A5A]/20">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-primary mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-[#F7BA72] mb-6 hero-text-glow">
             Если время настало — я буду рядом
           </h2>
-          <p className="text-xl text-center text-muted-foreground mb-12">
+          <p className="text-xl text-center text-[#FFDEB5]/80 mb-12">
             Оставь заявку, обсудим формат
           </p>
           
-          <Card className={`p-6 md:p-8 border-2 border-[#a87c4c]/30 bg-gradient-to-br from-white to-[#a87c4c]/5 form-highlight ${formHighlight ? 'active' : ''}`}>
+          <Card className={`p-6 md:p-8 border-2 border-[#C89A5A]/40 bg-gradient-to-br from-[#1C2330] to-[#C89A5A]/10 form-highlight shadow-[0_0_30px_rgba(247,186,114,0.15)] ${formHighlight ? 'active' : ''}`}>
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
-                <label className="block text-sm font-medium mb-2 text-primary">Имя *</label>
+                <label className="block text-sm font-medium mb-2 text-[#FFDEB5]">Имя *</label>
                 <Input 
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="Как к тебе обращаться?"
-                  className="border-2 h-12 md:h-14"
+                  className="border-2 border-[#C89A5A]/30 bg-[#111722]/50 text-[#FFDEB5] placeholder:text-[#FFDEB5]/40 h-12 md:h-14 focus:border-[#F7BA72]"
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-primary">Возраст</label>
+                  <label className="block text-sm font-medium mb-2 text-[#FFDEB5]">Возраст</label>
                   <Input 
                     value={formData.age}
                     onChange={(e) => setFormData({...formData, age: e.target.value})}
                     placeholder="Необязательно"
-                    className="border-2 h-12 md:h-14"
+                    className="border-2 border-[#C89A5A]/30 bg-[#111722]/50 text-[#FFDEB5] placeholder:text-[#FFDEB5]/40 h-12 md:h-14 focus:border-[#F7BA72]"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2 text-primary">Город</label>
+                  <label className="block text-sm font-medium mb-2 text-[#FFDEB5]">Город</label>
                   <Input 
                     value={formData.city}
                     onChange={(e) => setFormData({...formData, city: e.target.value})}
                     placeholder="Необязательно"
-                    className="border-2 h-12 md:h-14"
+                    className="border-2 border-[#C89A5A]/30 bg-[#111722]/50 text-[#FFDEB5] placeholder:text-[#FFDEB5]/40 h-12 md:h-14 focus:border-[#F7BA72]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-primary">Запрос</label>
+                <label className="block text-sm font-medium mb-2 text-[#FFDEB5]">Запрос</label>
                 <Textarea 
                   value={formData.request}
                   onChange={(e) => setFormData({...formData, request: e.target.value})}
                   placeholder="Что привело тебя сюда?"
-                  className="border-2 min-h-[100px] md:min-h-32"
+                  className="border-2 border-[#C89A5A]/30 bg-[#111722]/50 text-[#FFDEB5] placeholder:text-[#FFDEB5]/40 min-h-[100px] md:min-h-32 focus:border-[#F7BA72]"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2 text-primary">Контакт *</label>
+                <label className="block text-sm font-medium mb-2 text-[#FFDEB5]">Контакт *</label>
                 <Input 
                   required
                   value={formData.contact}
                   onChange={(e) => setFormData({...formData, contact: e.target.value})}
                   placeholder="Telegram / WhatsApp / Email"
-                  className="border-2 h-12 md:h-14"
+                  className="border-2 border-[#C89A5A]/30 bg-[#111722]/50 text-[#FFDEB5] placeholder:text-[#FFDEB5]/40 h-12 md:h-14 focus:border-[#F7BA72]"
                 />
               </div>
 
@@ -100,13 +102,14 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
                     checked={agreedPrivacy}
                     onCheckedChange={(checked) => setAgreedPrivacy(checked as boolean)}
                     required
+                    className="border-[#C89A5A]"
                   />
-                  <label htmlFor="privacy" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                  <label htmlFor="privacy" className="text-sm text-[#FFDEB5]/80 leading-relaxed cursor-pointer">
                     Я согласен(а) с{' '}
                     <button
                       type="button"
                       onClick={() => setPrivacyOpen(true)}
-                      className="text-accent hover:underline font-medium"
+                      className="text-[#F7BA72] hover:underline font-medium"
                     >
                       политикой конфиденциальности
                     </button>
@@ -120,13 +123,14 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
                     checked={agreedOffer}
                     onCheckedChange={(checked) => setAgreedOffer(checked as boolean)}
                     required
+                    className="border-[#C89A5A]"
                   />
-                  <label htmlFor="offer" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                  <label htmlFor="offer" className="text-sm text-[#FFDEB5]/80 leading-relaxed cursor-pointer">
                     Я согласен(а) с условиями{' '}
                     <button
                       type="button"
                       onClick={() => setOfferOpen(true)}
-                      className="text-accent hover:underline font-medium"
+                      className="text-[#F7BA72] hover:underline font-medium"
                     >
                       договора оферты
                     </button>
@@ -139,13 +143,14 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
                     id="marketing"
                     checked={agreedMarketing}
                     onCheckedChange={(checked) => setAgreedMarketing(checked as boolean)}
+                    className="border-[#C89A5A]"
                   />
-                  <label htmlFor="marketing" className="text-sm text-muted-foreground leading-relaxed cursor-pointer">
+                  <label htmlFor="marketing" className="text-sm text-[#FFDEB5]/80 leading-relaxed cursor-pointer">
                     Я согласен(а) на получение{' '}
                     <button
                       type="button"
                       onClick={() => setMarketingOpen(true)}
-                      className="text-accent hover:underline font-medium"
+                      className="text-[#F7BA72] hover:underline font-medium"
                     >
                       рекламной рассылки
                     </button>
@@ -156,7 +161,7 @@ const FormSection = ({ formRef, formHighlight, formData, setFormData, handleSubm
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-accent hover:bg-accent/90 text-white text-lg h-12 md:h-14 submit-button"
+                className="w-full hero-gradient-bg text-[#111722] hover:brightness-110 text-lg h-12 md:h-14 submit-button font-semibold shadow-[0_0_25px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
                 disabled={!agreedPrivacy || !agreedOffer}
               >
                 Отправить заявку
