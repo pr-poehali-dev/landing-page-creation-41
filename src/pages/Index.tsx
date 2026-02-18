@@ -2,6 +2,7 @@ import DoubleLayerBackground from "@/components/DoubleLayerBackground";
 import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import ContentSections from "@/components/sections/ContentSections";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FormSection from "@/components/sections/FormSection";
 import { useState, useRef } from "react";
 
@@ -39,6 +40,7 @@ const Index = () => {
       <HeroSection scrollToForm={scrollToForm} />
       <ProblemSection />
       <ContentSections />
+      <TestimonialsSection />
       <FormSection 
         formRef={formRef}
         formHighlight={formHighlight}
