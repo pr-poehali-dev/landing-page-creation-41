@@ -10,26 +10,30 @@ const TestimonialsSection = ({ sectionRef }: TestimonialsSectionProps) => {
     {
       name: "Анна, 32 года",
       city: "Москва",
-      text: "Я впервые позволила себе говорить о своих желаниях без стыда. Благодарю Алёну за этот опыт — он изменил мою жизнь.",
-      accent: "Я научилась слышать себя"
+      text: "Я впервые позволила себе говорить о своих желаниях без стыда. Благодарю Анну за этот опыт — он изменил мою жизнь.",
+      accent: "Я научилась слышать себя",
+      avatar: "https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/files/c21cfe04-20b6-408c-9d31-546cdcd9c0a0.jpg"
     },
     {
       name: "Мария, 38 лет",
       city: "Санкт-Петербург",
       text: "Клуб стал пространством, где я почувствовала, что имею право на удовольствие. Это не только про секс — это про жизнь.",
-      accent: "Я обрела внутреннюю свободу"
+      accent: "Я обрела внутреннюю свободу",
+      avatar: "https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/files/ac61ddea-f4fa-4adc-826b-0783beaa14c7.jpg"
     },
     {
       name: "Елена, 29 лет",
       city: "Казань",
-      text: "Алёна создала атмосферу безопасности и принятия. Каждая встреча — это откровение. Я узнала себя заново.",
-      accent: "Я открыла новую себя"
+      text: "Анна создала атмосферу безопасности и принятия. Каждая встреча — это откровение. Я узнала себя заново.",
+      accent: "Я открыла новую себя",
+      avatar: "https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/files/d3269778-3104-4d85-8284-76a978019fa2.jpg"
     },
     {
       name: "Ольга, 41 год",
       city: "Новосибирск",
-      text: "В 41 я наконец-то поняла, что моё тело и желания — это дар, а не повод для вины. Спасибо за эту трансформацию.",
-      accent: "Я приняла себя полностью"
+      text: "В 41 я наконец-то поняла, что моё тело и желания — это дар, а не повод для вины. Спасибо Анне за эту трансформацию.",
+      accent: "Я приняла себя полностью",
+      avatar: "https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/files/054524c2-e439-47c4-accb-1f7e7f22d627.jpg"
     }
   ];
 
@@ -71,9 +75,11 @@ const TestimonialsSection = ({ sectionRef }: TestimonialsSectionProps) => {
                 </div>
                 
                 <div className="flex items-center gap-3 pt-4 border-t border-[#C89A5A]/20">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#F7BA72] to-[#C89A5A] flex items-center justify-center text-[#111722] font-bold text-lg">
-                    {testimonial.name.charAt(0)}
-                  </div>
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-[#C89A5A]/50 group-hover:ring-[#F7BA72] transition-all duration-300"
+                  />
                   <div>
                     <div className="font-semibold text-[#FFDEB5]">{testimonial.name}</div>
                     <div className="text-sm text-[#FFDEB5]/60">{testimonial.city}</div>
