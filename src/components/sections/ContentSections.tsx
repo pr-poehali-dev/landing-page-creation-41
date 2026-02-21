@@ -16,7 +16,7 @@ const ContentSections = () => {
 
   return (
     <>
-      <section id="promise" className="py-12 md:py-20 px-4 relative bg-[#111722] border-t-2 border-[#C89A5A]/20">
+      <section id="program" className="py-12 md:py-20 px-4 relative bg-[#111722] border-t-2 border-[#C89A5A]/20 scroll-mt-20">
         <AnimatedBackground variant="light" />
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-center mb-8">
@@ -149,7 +149,7 @@ const ContentSections = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 px-4 bg-[#1C2330] relative backdrop-blur-sm border-t-2 border-[#C89A5A]/20">
+      <section id="for-whom" className="py-12 md:py-20 px-4 bg-[#1C2330] relative backdrop-blur-sm border-t-2 border-[#C89A5A]/20 scroll-mt-20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-[#F7BA72] mb-8 md:mb-12">
             Для кого программа
@@ -201,7 +201,7 @@ const ContentSections = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 px-4 relative bg-[#111722] border-t-2 border-[#C89A5A]/20">
+      <section id="about" className="py-12 md:py-20 px-4 relative bg-[#111722] border-t-2 border-[#C89A5A]/20 scroll-mt-20">
         <AnimatedBackground variant="light" className="opacity-60" />
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#1C2330] rounded-2xl p-6 md:p-8 lg:p-12 border-2 border-[#C89A5A]/40 shadow-[0_0_40px_rgba(247,186,114,0.15)]">
