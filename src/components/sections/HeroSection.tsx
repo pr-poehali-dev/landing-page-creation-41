@@ -65,7 +65,7 @@ const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
                 <Button 
                   size="lg"
                   className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-8 py-6 text-base font-medium transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
-                  onClick={() => window.open('https://t.me/annavetruk', '_blank')}
+                  onClick={() => window.open('https://t.me/Annavetryuk', '_blank')}
                 >
                   <Icon name="Send" className="mr-2" size={20} />
                   Написать в Telegram
