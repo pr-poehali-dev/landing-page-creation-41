@@ -22,24 +22,22 @@ const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#111722]/90 backdrop-blur-md shadow-lg shadow-[#C89A5A]/10' : ''}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <img 
-            src="https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/files/fb8cf0c2-677f-49f5-bab7-9bc6880e4c98.jpg" 
-            alt="Камерный клуб" 
-            className="h-12 object-contain"
-          />
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-end">
           <div className="hidden md:flex items-center gap-8">
-            <a href="#promise" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              О программе
+            <a href="#program" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+              Программа
             </a>
-            <a href="#format" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Формат
+            <a href="#for-whom" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+              Для кого
             </a>
-            <a href="#timeline" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              График
+            <a href="#pricing" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+              Тарифы
             </a>
-            <a href="#contact" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Контакт
+            <a href="#testimonials" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+              Отзывы
+            </a>
+            <a href="#about" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+              Обо мне
             </a>
           </div>
         </div>
