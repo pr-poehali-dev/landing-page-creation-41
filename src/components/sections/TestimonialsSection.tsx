@@ -40,7 +40,8 @@ const TestimonialsSection = ({ sectionRef }: TestimonialsSectionProps) => {
   return (
     <section 
       ref={sectionRef}
-      className="py-16 md:py-24 relative overflow-hidden"
+      id="testimonials"
+      className="py-16 md:py-24 relative overflow-hidden scroll-mt-20"
     >
       <div className="absolute inset-0 bg-[#1C2330]"></div>
       

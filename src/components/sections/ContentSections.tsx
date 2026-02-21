@@ -229,7 +229,7 @@ const ContentSections = () => {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 px-4 bg-[#1C2330] relative backdrop-blur-sm border-t-2 border-[#C89A5A]/20">
+      <section id="pricing" className="py-12 md:py-20 px-4 bg-[#1C2330] relative backdrop-blur-sm border-t-2 border-[#C89A5A]/20 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-center text-[#F7BA72] mb-8 md:mb-16">
             Форматы и стоимость
