@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 import { RefObject } from "react";
 
 interface TestimonialsSectionProps {
@@ -94,9 +96,17 @@ const TestimonialsSection = ({ sectionRef }: TestimonialsSectionProps) => {
         </div>
 
         <div className="text-center mt-12 md:mt-16">
-          <p className="text-[#FFDEB5]/60 text-sm md:text-base max-w-2xl mx-auto">
+          <p className="text-[#FFDEB5]/60 text-sm md:text-base max-w-2xl mx-auto mb-8">
             Имена изменены для конфиденциальности. Отзывы основаны на реальном опыте участниц клуба.
           </p>
+          <Button
+            size="lg"
+            className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-10 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            <Icon name="Users" className="mr-2" size={22} />
+            Записаться в группу
+          </Button>
         </div>
       </div>
     </section>

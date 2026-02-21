@@ -44,6 +44,17 @@ const ContentSections = () => {
               </Card>
             ))}
           </div>
+
+          <div className="flex justify-center mt-10 md:mt-14">
+            <Button
+              size="lg"
+              className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-10 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Icon name="Sparkles" className="mr-2" size={22} />
+              Хочу так
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -146,6 +157,17 @@ const ContentSections = () => {
               </Card>
             ))}
           </div>
+
+          <div className="flex justify-center mt-10 md:mt-14">
+            <Button
+              size="lg"
+              className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-10 py-4 text-lg font-semibold transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
+              onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Icon name="ArrowRight" className="mr-2" size={22} />
+              Выбрать формат
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -228,8 +250,8 @@ const ContentSections = () => {
                   className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-8 py-3 text-base font-medium transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
                   onClick={() => window.open('https://t.me/Annavetryuk', '_blank')}
                 >
-                  <Icon name="Send" className="mr-2" size={20} />
-                  Написать в Telegram
+                  <Icon name="MessageCircle" className="mr-2" size={20} />
+                  Задать вопрос Анне
                 </Button>
               </div>
             </div>
