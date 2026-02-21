@@ -100,16 +100,31 @@ const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
             </div>
 
             <div className={`relative transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="relative aspect-[3/4] bg-gradient-to-br from-[#C89A5A]/10 to-[#F7BA72]/5 rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C89A5A]/20">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-[#C89A5A]/40">
-                    <Icon name="User" size={120} />
-                    <p className="text-sm mt-4 italic text-[#FFDEB5]/50">Ваше фото будет здесь</p>
-                  </div>
-                </div>
-                <div className="absolute top-4 left-4 w-20 h-20 border-l-2 border-t-2 border-[#C89A5A]/40"></div>
-                <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-[#C89A5A]/40"></div>
+              <div className="relative aspect-[3/4] rounded-3xl overflow-hidden">
+                <div 
+                  className="absolute inset-0 scale-110"
+                  style={{
+                    backgroundImage: 'url(https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/bucket/b8ae8e3b-4795-4d3e-818b-479a0cf31b90.jpg)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center top',
+                    filter: 'blur(20px) brightness(0.5) saturate(0.7)',
+                  }}
+                ></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-[#111722]/40 via-transparent to-[#111722]/60"></div>
+                <img 
+                  src="https://cdn.poehali.dev/projects/1826759d-b015-438c-8385-e4c051567c5b/bucket/b8ae8e3b-4795-4d3e-818b-479a0cf31b90.jpg"
+                  alt="Анна"
+                  className="relative z-10 w-full h-full object-cover object-top"
+                  style={{
+                    maskImage: 'radial-gradient(ellipse 85% 90% at 50% 40%, black 60%, transparent 100%)',
+                    WebkitMaskImage: 'radial-gradient(ellipse 85% 90% at 50% 40%, black 60%, transparent 100%)',
+                  }}
+                />
+                <div className="absolute inset-0 z-20 rounded-3xl shadow-[inset_0_0_60px_rgba(17,23,34,0.6)]"></div>
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#111722] via-transparent to-transparent opacity-70"></div>
+                <div className="absolute bottom-0 left-0 right-0 z-20 h-1/4 bg-gradient-to-t from-[#111722] to-transparent"></div>
               </div>
+              <div className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#C89A5A]/20 via-transparent to-[#F7BA72]/10 -z-10 blur-xl"></div>
             </div>
           </div>
         </div>
