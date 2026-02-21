@@ -219,10 +219,18 @@ const ContentSections = () => {
                 <p className="text-sm md:text-base text-[#FFDEB5]/80 mb-4">
                   5+ лет работы с женской сексуальностью и травмой. Десятки женщин прошли путь от 'я сломана' к опоре на себя.
                 </p>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm mb-6">
                   <p className="text-[#FFDEB5]/90"><strong className="text-[#F7BA72]">Подход:</strong> КПТ, работа с телом, сексология</p>
                   <p className="text-[#FFDEB5]/90"><strong className="text-[#F7BA72]">Ценности:</strong> Уважаю границы и темп каждой. Можно быть собой.</p>
                 </div>
+                <Button
+                  size="lg"
+                  className="hero-gradient-bg hover:brightness-110 text-[#111722] rounded-full px-8 py-3 text-base font-medium transition-all shadow-lg hover:shadow-[0_0_30px_rgba(247,186,114,0.4)] border-2 border-[#C89A5A]"
+                  onClick={() => window.open('https://t.me/Annavetryuk', '_blank')}
+                >
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Написать в Telegram
+                </Button>
               </div>
             </div>
           </div>

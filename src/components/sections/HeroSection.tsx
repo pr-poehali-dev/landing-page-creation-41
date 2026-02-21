@@ -6,9 +6,18 @@ interface HeroSectionProps {
   scrollToForm: () => void;
 }
 
+const navLinks = [
+  { href: "#program", label: "Программа" },
+  { href: "#for-whom", label: "Для кого" },
+  { href: "#pricing", label: "Тарифы" },
+  { href: "#testimonials", label: "Отзывы" },
+  { href: "#about", label: "Обо мне" },
+];
+
 const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
@@ -19,29 +28,69 @@ const HeroSection = ({ scrollToForm }: HeroSectionProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#111722]/90 backdrop-blur-md shadow-lg shadow-[#C89A5A]/10' : ''}`}>
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-end">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between md:justify-end">
+          <button
+            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg border border-[#C89A5A]/40 text-[#F7BA72] hover:bg-[#C89A5A]/20 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Меню"
+          >
+            <Icon name={mobileOpen ? "X" : "Menu"} size={22} />
+          </button>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#program" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Программа
-            </a>
-            <a href="#for-whom" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Для кого
-            </a>
-            <a href="#pricing" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Тарифы
-            </a>
-            <a href="#testimonials" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Отзывы
-            </a>
-            <a href="#about" className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
-              Обо мне
-            </a>
+            {navLinks.map((link) => (
+              <a key={link.href} href={link.href} className="text-sm text-[#FFDEB5] hover:text-[#F7BA72] transition-colors">
+                {link.label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
+
+      <div
+        className={`fixed inset-0 z-40 bg-[#111722]/95 backdrop-blur-lg transition-all duration-300 md:hidden ${mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setMobileOpen(false)}
+      >
+        <div
+          className={`flex flex-col items-center justify-center h-full gap-6 transition-transform duration-300 ${mobileOpen ? 'translate-y-0' : '-translate-y-8'}`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          {navLinks.map((link, idx) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-2xl font-light text-[#FFDEB5] hover:text-[#F7BA72] transition-colors"
+              style={{ transitionDelay: `${idx * 50}ms` }}
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <div className="mt-4 pt-4 border-t border-[#C89A5A]/30 w-48 text-center">
+            <a
+              href="https://t.me/Annavetryuk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-lg text-[#F7BA72] hover:text-[#FFDEB5] transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              <Icon name="Send" size={18} />
+              Telegram
+            </a>
+          </div>
+        </div>
+      </div>
 
       <section className="relative min-h-screen flex items-center pt-20">
         <div className="max-w-7xl mx-auto px-6 w-full">
